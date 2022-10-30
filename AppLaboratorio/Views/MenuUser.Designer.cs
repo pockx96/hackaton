@@ -1,4 +1,5 @@
-﻿namespace MarDeCortezDsk.Views
+﻿using AppLaboratorio.UserControlls;
+namespace AppLaboratorio.Views
 {
     partial class MenuUser
     {
@@ -39,12 +40,12 @@
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.BtnProveedor = new FontAwesome.Sharp.IconButton();
-            this.ContainerTileBar = new MarDeCortezDsk.UserControlls.SPanel();
-            this.RelogContainer = new MarDeCortezDsk.UserControlls.Relog();
-            this.CalendarioContainer = new MarDeCortezDsk.UserControlls.Calendario();
-            this.TitleUsuario = new MarDeCortezDsk.UserControlls.BarraUsuario();
+            this.ContainerTileBar = new AppLaboratorio.UserControlls.SPanel();
+            this.RelogContainer = new AppLaboratorio.UserControlls.Relog();
+            this.CalendarioContainer = new AppLaboratorio.UserControlls.Calendario();
+            this.TitleUsuario = new AppLaboratorio.UserControlls.BarraUsuario();
             this.BtnBack = new FontAwesome.Sharp.IconButton();
-            this.PanelForm = new MarDeCortezDsk.UserControlls.SPanel();
+            this.PanelForm = new AppLaboratorio.UserControlls.SPanel();
             this.ContainerComponents = new System.Windows.Forms.Panel();
             this.MenuContainer.SuspendLayout();
             this.ContainerTileBar.SuspendLayout();

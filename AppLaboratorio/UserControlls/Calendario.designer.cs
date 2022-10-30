@@ -1,4 +1,4 @@
-﻿namespace MarDeCortezDsk.UserControlls
+﻿namespace AppLaboratorio.UserControlls
 {
     partial class Calendario
     {

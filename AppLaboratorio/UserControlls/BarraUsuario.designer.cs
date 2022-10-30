@@ -1,4 +1,4 @@
-﻿namespace MarDeCortezDsk.UserControlls
+﻿namespace AppLaboratorio.UserControlls
 {
     partial class BarraUsuario
     {
@@ -55,7 +55,7 @@
             // 
             this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.iconPictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserCircle;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.CircleUser;
             this.iconPictureBox1.IconColor = System.Drawing.Color.White;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 30;
@@ -75,6 +75,7 @@
             this.panel4.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.panel4.Size = new System.Drawing.Size(95, 31);
             this.panel4.TabIndex = 13;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // LblUser
             // 

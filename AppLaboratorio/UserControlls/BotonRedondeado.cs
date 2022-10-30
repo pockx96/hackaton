@@ -8,7 +8,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.ComponentModel;
 
-namespace MarDeCortezDsk.UserControlls
+namespace AppLaboratorio.UserControlls
 {
     class BotonRedondo:Button
     {

@@ -7,16 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MarDeCortezDsk.Styles;
-using MarDeCortezDsk.UserControlls.FichasAdmin;
-using MarDeCortezDsk.UserControlls.FichasConfirmacion;
-using MarDeCortezDsk.Controllers;
-using MarDeCortezDsk.Models;
 using FontAwesome.Sharp;
-using MarDeCortezDsk.UserControlls;
-using MarDeCortezDsk.Views;
+using AppLaboratorio.Views;
+using AppLaboratorio.UserControlls;
 
-namespace MarDeCortezDsk.Views
+
+namespace AppLaboratorio.Views
 {
     public partial class MenuUser : Form
     {
@@ -33,17 +29,13 @@ namespace MarDeCortezDsk.Views
         {
             FichaEntradaAdd();
             ActivateButton(BtnFichas, RGBColors.color1);
-            provedoresShowDialog.loadProveedor += new ProvedorShowDialog.loadProveedorDelegate(ProveedoresLoad);
+            
         }
 
         public string Usuario { get; set; }
         public string Fecha { get; set; }
 
 
-        Animations animations = new Animations();
-
-
-        public ProvedorShowDialog provedoresShowDialog = new ProvedorShowDialog();
 
         private delegate void BackDelegate();
         private event BackDelegate Back;
@@ -59,9 +51,6 @@ namespace MarDeCortezDsk.Views
         /// 
 
         
-        Ajustes ajustes = new Ajustes();
-        ListaUsuarios editarUsuario = new ListaUsuarios();
-        CarritoProducto carrito = new CarritoProducto() { Location = new Point(0, 0) };
 
 
 
@@ -71,36 +60,25 @@ namespace MarDeCortezDsk.Views
         /// <summary>
         private void FichaEntradaAdd()
         {
-            ListaFolios listaFolios = new ListaFolios();
-            listaFolios.LoadData("Pendiente");
-            listaFolios.Calcular += new ListaFolios.CalcularDelegate(Calcular);
-            BtnBack.Visible = false;
-            listaFolios.Location = new Point(0,0);
-            ContainerComponents.Controls.Clear();
-            ContainerComponents.Controls.Add(listaFolios);
+           
 
         }
         private void BtnFichas_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
+            Ajustes ajustes = new Ajustes() { Location = new Point(0,0)};
+            ContainerComponents.Controls.Add(ajustes);
             FichaEntradaAdd();
             HideBtnProducto();
 
         }
 
-
+        
 
 
         public void Calcular(string folio)
         {
-            CalculadoraFichas Calculadora = new CalculadoraFichas(folio);
-            Calculadora.Location = new Point(0, 0);
-            Calculadora.Clear();
-            Calculadora.LoadData(folio);
-            Calculadora.Return += new CalculadoraFichas.ReturnDelegate(FichaEntradaAdd);
-            ContainerComponents.Controls.Clear();
-            ContainerComponents.Controls.Add(Calculadora);
-            BtnBack.Visible = true;
+
         }
 
         /// <summary>
@@ -120,11 +98,6 @@ namespace MarDeCortezDsk.Views
         {
             ActivateButton(sender, RGBColors.color2);
 
-            Inventarios inventarios = new Inventarios();
-            inventarios.Location = new Point(140, 6);
-            ContainerComponents.Controls.Clear();
-            ContainerComponents.Controls.Add(inventarios);
-            BtnBack.Visible = false;
         }
 
         /// Boton de agregar usuario
@@ -134,10 +107,7 @@ namespace MarDeCortezDsk.Views
         {
             ActivateButton(sender, RGBColors.color3);
 
-            UserConfig AggUsuario = new UserConfig() { Location = new Point(0,0)};
-            ContainerComponents.Controls.Clear();
-            ContainerComponents.Controls.Add(AggUsuario);
-            BtnBack.Visible = false;
+
         }
         
 
@@ -149,32 +119,17 @@ namespace MarDeCortezDsk.Views
         {
             ActivateButton(sender, RGBColors.color6);
 
-            MenuProveedor proveedor = new MenuProveedor() { Location = new Point(0,0) };
-            ContainerComponents.Controls.Clear();
-            ContainerComponents.Controls.Add(proveedor);
-            BtnBack.Visible = false;
-
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color6);
-            carrito.Proveedor = "Tienda";
-            carrito.Usuario = Usuario;
-            carrito.Fecha = Fecha;
 
-            ContainerComponents.Controls.Clear();
-            ContainerComponents.Controls.Add(carrito);
-            ShowBtnProducto();
-            BtnBack.Visible = true;
-            this.Back += new BackDelegate(HideBtnProducto);
         }
 
         private void BtnUser_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
-            login.Show();
-            this.Hide();
+
 
         }
         ////Boton de producto
@@ -183,10 +138,7 @@ namespace MarDeCortezDsk.Views
         {
             ActivateButton(sender, RGBColors.color6);
 
-            ProductosConfig producto = new ProductosConfig() { Location = new Point(0, 0) };
-            ContainerComponents.Controls.Clear();
-            ContainerComponents.Controls.Add(producto);
-            BtnBack.Visible = false;
+
         }
 
         /// <summary>
@@ -253,15 +205,7 @@ namespace MarDeCortezDsk.Views
    
         public void ProveedoresLoad(string proveedor,string usuario,string fecha)
         {
-            carrito.Proveedor = proveedor;
-            carrito.Usuario = usuario;
-            carrito.Fecha = fecha;
 
-            ContainerComponents.Controls.Clear();
-            ContainerComponents.Controls.Add(carrito);
-            ShowBtnProducto();
-            BtnBack.Visible = true;
-            this.Back += new BackDelegate(HideBtnProducto);
         }
      
 
@@ -367,23 +311,22 @@ namespace MarDeCortezDsk.Views
 
         private void BtnCamaron_Click(object sender, EventArgs e)
         {
-            carrito.CamaronAdd();
+
         }
 
         private void BtnPescado_Click(object sender, EventArgs e)
         {
-            carrito.PescadoAdd();
+
         }
 
         private void BtnOtros_Click(object sender, EventArgs e)
         {
-            carrito.OtrosAdd();
+
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-            ProveedorShowDialog proveedor = new ProveedorShowDialog();
-            proveedor.Show();
+
         }
     }
 }

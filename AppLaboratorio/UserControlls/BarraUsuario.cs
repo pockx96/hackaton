@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MarDeCortezDsk.UserControlls
+namespace AppLaboratorio.UserControlls
 {
     public partial class BarraUsuario : UserControl
     {
@@ -27,6 +27,11 @@ namespace MarDeCortezDsk.UserControlls
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
         }

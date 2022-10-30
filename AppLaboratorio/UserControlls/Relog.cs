@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MarDeCortezDsk.UserControlls
+namespace AppLaboratorio.UserControlls
 {
     public partial class Relog : UserControl
     {
