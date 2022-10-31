@@ -34,8 +34,8 @@ namespace AppLaboratorio.Views
             this.BtnInventario = new FontAwesome.Sharp.IconButton();
             this.BtnUser = new FontAwesome.Sharp.IconButton();
             this.MenuContainer = new System.Windows.Forms.Panel();
-            this.BtnPescado = new System.Windows.Forms.Button();
             this.BtnCamaron = new System.Windows.Forms.Button();
+            this.BtnPescado = new System.Windows.Forms.Button();
             this.BtnOtros = new System.Windows.Forms.Button();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
@@ -49,6 +49,7 @@ namespace AppLaboratorio.Views
             this.ContainerComponents = new System.Windows.Forms.Panel();
             this.MenuContainer.SuspendLayout();
             this.ContainerTileBar.SuspendLayout();
+            this.PanelForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnFichas
@@ -58,7 +59,7 @@ namespace AppLaboratorio.Views
             this.BtnFichas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnFichas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.BtnFichas.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnFichas.IconChar = FontAwesome.Sharp.IconChar.FileInvoice;
+            this.BtnFichas.IconChar = FontAwesome.Sharp.IconChar.BoxOpen;
             this.BtnFichas.IconColor = System.Drawing.Color.White;
             this.BtnFichas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnFichas.Location = new System.Drawing.Point(2, 3);
@@ -66,7 +67,7 @@ namespace AppLaboratorio.Views
             this.BtnFichas.Name = "BtnFichas";
             this.BtnFichas.Size = new System.Drawing.Size(151, 64);
             this.BtnFichas.TabIndex = 6;
-            this.BtnFichas.Text = "Folios";
+            this.BtnFichas.Text = "Inventario";
             this.BtnFichas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnFichas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnFichas.UseVisualStyleBackColor = false;
@@ -134,26 +135,6 @@ namespace AppLaboratorio.Views
             this.MenuContainer.TabIndex = 13;
             this.MenuContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuContainer_Paint);
             // 
-            // BtnPescado
-            // 
-            this.BtnPescado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(122)))), ((int)(((byte)(242)))));
-            this.BtnPescado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnPescado.FlatAppearance.BorderSize = 0;
-            this.BtnPescado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnPescado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPescado.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnPescado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnPescado.Location = new System.Drawing.Point(3, 301);
-            this.BtnPescado.Margin = new System.Windows.Forms.Padding(0);
-            this.BtnPescado.Name = "BtnPescado";
-            this.BtnPescado.Size = new System.Drawing.Size(151, 64);
-            this.BtnPescado.TabIndex = 6;
-            this.BtnPescado.Text = "   Pescado";
-            this.BtnPescado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnPescado.UseVisualStyleBackColor = false;
-            this.BtnPescado.Visible = false;
-            this.BtnPescado.Click += new System.EventHandler(this.BtnPescado_Click);
-            // 
             // BtnCamaron
             // 
             this.BtnCamaron.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(122)))), ((int)(((byte)(242)))));
@@ -174,6 +155,26 @@ namespace AppLaboratorio.Views
             this.BtnCamaron.UseVisualStyleBackColor = false;
             this.BtnCamaron.Visible = false;
             this.BtnCamaron.Click += new System.EventHandler(this.BtnCamaron_Click);
+            // 
+            // BtnPescado
+            // 
+            this.BtnPescado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(122)))), ((int)(((byte)(242)))));
+            this.BtnPescado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnPescado.FlatAppearance.BorderSize = 0;
+            this.BtnPescado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnPescado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPescado.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnPescado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnPescado.Location = new System.Drawing.Point(3, 301);
+            this.BtnPescado.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnPescado.Name = "BtnPescado";
+            this.BtnPescado.Size = new System.Drawing.Size(151, 64);
+            this.BtnPescado.TabIndex = 6;
+            this.BtnPescado.Text = "   Pescado";
+            this.BtnPescado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnPescado.UseVisualStyleBackColor = false;
+            this.BtnPescado.Visible = false;
+            this.BtnPescado.Click += new System.EventHandler(this.BtnPescado_Click);
             // 
             // BtnOtros
             // 
@@ -244,7 +245,7 @@ namespace AppLaboratorio.Views
             this.BtnProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnProveedor.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnProveedor.IconChar = FontAwesome.Sharp.IconChar.ShippingFast;
+            this.BtnProveedor.IconChar = FontAwesome.Sharp.IconChar.TruckFast;
             this.BtnProveedor.IconColor = System.Drawing.Color.White;
             this.BtnProveedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnProveedor.Location = new System.Drawing.Point(3, 301);
@@ -282,7 +283,7 @@ namespace AppLaboratorio.Views
             // CalendarioContainer
             // 
             this.CalendarioContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.CalendarioContainer.Fecha = "20-10-2022";
+            this.CalendarioContainer.Fecha = "30-10-2022";
             this.CalendarioContainer.Location = new System.Drawing.Point(732, 24);
             this.CalendarioContainer.Name = "CalendarioContainer";
             this.CalendarioContainer.Size = new System.Drawing.Size(131, 31);
@@ -332,8 +333,6 @@ namespace AppLaboratorio.Views
             this.ContainerComponents.Size = new System.Drawing.Size(876, 500);
             this.ContainerComponents.TabIndex = 11;
             // 
-
-            // 
             // MenuUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,14 +351,13 @@ namespace AppLaboratorio.Views
             this.Move += new System.EventHandler(this.MenuAdmin_Move);
             this.MenuContainer.ResumeLayout(false);
             this.ContainerTileBar.ResumeLayout(false);
-           
+            this.PanelForm.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private UserControlls.BotonRedondo BtnCalculadoraCancelar;
         private UserControlls.SPanel PanelForm;
         private FontAwesome.Sharp.IconButton BtnFichas;
         private FontAwesome.Sharp.IconButton BtnInventario;

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using FontAwesome.Sharp;
 using AppLaboratorio.Views;
 using AppLaboratorio.UserControlls;
+using AppLaboratorio.UserControlls.InventarioFolder;
 
 
 namespace AppLaboratorio.Views
@@ -27,13 +28,16 @@ namespace AppLaboratorio.Views
 
         private void MenuAdmin_Load(object sender, EventArgs e)
         {
-            FichaEntradaAdd();
-            ActivateButton(BtnFichas, RGBColors.color1);
+
+            Inicio();
             
         }
 
         public string Usuario { get; set; }
         public string Fecha { get; set; }
+
+        public Point StartPoint = new Point(0, 0);   
+
 
 
 
@@ -58,26 +62,31 @@ namespace AppLaboratorio.Views
         /// <summary>
         /// Boton de folios
         /// <summary>
-        private void FichaEntradaAdd()
+        private void Inicio()
         {
-           
+            ActivateButton(BtnFichas, RGBColors.color1);
+            Inventario inventario = new Inventario() { Location = StartPoint };
+            inventario.Crear += new Inventario.CrearDelegate(CrearHerramienta);
+            ContainerComponents.Controls.Clear();
+            ContainerComponents.Controls.Add(inventario);
 
         }
         private void BtnFichas_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color1);
-            Ajustes ajustes = new Ajustes() { Location = new Point(0,0)};
-            ContainerComponents.Controls.Add(ajustes);
-            FichaEntradaAdd();
-            HideBtnProducto();
+            Inicio();
 
         }
 
         
 
 
-        public void Calcular(string folio)
+        public void CrearHerramienta()
         {
+            this.Back += new BackDelegate(Inicio);
+            NuevoHerramineta nuevoHerramineta = new NuevoHerramineta() { Location = StartPoint };
+            ContainerComponents.Controls.Clear();
+            ContainerComponents.Controls.Add(nuevoHerramineta);
+            BtnBack.Visible = true;
 
         }
 
