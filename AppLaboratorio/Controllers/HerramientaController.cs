@@ -96,6 +96,47 @@ namespace AppLaboratorio.Controllers
             }
         }
 
+        public Herramienta Get(string id)
+        {
+            Herramienta herramienta = new Herramienta();
+            string query = $"select * from herramientas where IdHerramienta = '{id}'";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                MySqlCommand command = new MySqlCommand(query, connection);
+                try
+                {
+                    connection.Open();
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        
+                        herramienta.IdHerramienta = reader.GetInt32(0);
+                        herramienta.herramienta = reader.GetString(1);
+                        herramienta.marca = reader.GetString(2);
+                        herramienta.modelo = reader.GetString(3);
+                        herramienta.numero_serie = reader.GetString(4);
+                        herramienta.cantidad = reader.GetString(5);
+                        herramienta.descripcion = reader.GetString(6);
+                        herramienta.laboratorio = reader.GetString(7);
+
+
+                    }
+                    reader.Close();
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("error de la base de datos : " + ex);
+
+                }
+
+                return herramienta;
+
+            }
+        }
+
         public void Post(Herramienta herramienta)
         {
             int IdHerramienta = NewId();

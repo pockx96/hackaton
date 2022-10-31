@@ -31,20 +31,23 @@ namespace AppLaboratorio.Views
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.sPanel1 = new AppLaboratorio.UserControlls.SPanel();
-            this.EyeButton = new FontAwesome.Sharp.IconButton();
             this.txtBox_psswrd = new AppLaboratorio.UserControlls.RJTextBox();
             this.txtBox_user = new AppLaboratorio.UserControlls.RJTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.BtnAgregar = new AppLaboratorio.UserControlls.BotonRedondo();
-
             this.label1 = new System.Windows.Forms.Label();
+            this.EyeButton = new FontAwesome.Sharp.IconButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.sPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // sPanel1
             // 
             this.sPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
             this.sPanel1.BorderColor = System.Drawing.Color.White;
+            this.sPanel1.Controls.Add(this.pictureBox1);
             this.sPanel1.Controls.Add(this.EyeButton);
             this.sPanel1.Controls.Add(this.txtBox_psswrd);
             this.sPanel1.Controls.Add(this.txtBox_user);
@@ -58,21 +61,6 @@ namespace AppLaboratorio.Views
             this.sPanel1.Size = new System.Drawing.Size(327, 489);
             this.sPanel1.TabIndex = 3;
             this.sPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.sPanel1_Paint);
-            // 
-            // EyeButton
-            // 
-            this.EyeButton.FlatAppearance.BorderSize = 0;
-            this.EyeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EyeButton.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
-            this.EyeButton.IconColor = System.Drawing.Color.White;
-            this.EyeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.EyeButton.IconSize = 30;
-            this.EyeButton.Location = new System.Drawing.Point(273, 323);
-            this.EyeButton.Name = "EyeButton";
-            this.EyeButton.Size = new System.Drawing.Size(39, 34);
-            this.EyeButton.TabIndex = 43;
-            this.EyeButton.UseVisualStyleBackColor = true;
-            this.EyeButton.Click += new System.EventHandler(this.EyeButton_Click);
             // 
             // txtBox_psswrd
             // 
@@ -142,8 +130,8 @@ namespace AppLaboratorio.Views
             // 
             // BtnAgregar
             // 
-            this.BtnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(115)))), ((int)(((byte)(26)))));
-            this.BtnAgregar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(115)))), ((int)(((byte)(26)))));
+            this.BtnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(122)))), ((int)(((byte)(242)))));
+            this.BtnAgregar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(122)))), ((int)(((byte)(242)))));
             this.BtnAgregar.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.BtnAgregar.BorderRadius = 20;
             this.BtnAgregar.BorderSize = 0;
@@ -159,7 +147,6 @@ namespace AppLaboratorio.Views
             this.BtnAgregar.TextColor = System.Drawing.Color.White;
             this.BtnAgregar.UseVisualStyleBackColor = false;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
-
             // 
             // label1
             // 
@@ -171,12 +158,37 @@ namespace AppLaboratorio.Views
             this.label1.TabIndex = 2;
             this.label1.Text = "@Create by Acosta/Badillo";
             // 
+            // EyeButton
+            // 
+            this.EyeButton.FlatAppearance.BorderSize = 0;
+            this.EyeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EyeButton.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+            this.EyeButton.IconColor = System.Drawing.Color.White;
+            this.EyeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.EyeButton.IconSize = 30;
+            this.EyeButton.Location = new System.Drawing.Point(273, 323);
+            this.EyeButton.Name = "EyeButton";
+            this.EyeButton.Size = new System.Drawing.Size(39, 34);
+            this.EyeButton.TabIndex = 43;
+            this.EyeButton.UseVisualStyleBackColor = true;
+            this.EyeButton.Click += new System.EventHandler(this.EyeButton_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AppLaboratorio.Properties.Resources.tcnm_blanco;
+            this.pictureBox1.Location = new System.Drawing.Point(64, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 44;
+            this.pictureBox1.TabStop = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(122)))), ((int)(((byte)(242)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(60)))), ((int)(((byte)(108)))));
             this.ClientSize = new System.Drawing.Size(357, 524);
             this.Controls.Add(this.sPanel1);
             this.Controls.Add(this.label1);
@@ -189,6 +201,8 @@ namespace AppLaboratorio.Views
             this.Text = "Sea Manager";
             this.Load += new System.EventHandler(this.Login_Load);
             this.sPanel1.ResumeLayout(false);
+            this.sPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,5 +217,6 @@ namespace AppLaboratorio.Views
         private AppLaboratorio.UserControlls.RJTextBox txtBox_psswrd;
         private AppLaboratorio.UserControlls.RJTextBox txtBox_user;
         private FontAwesome.Sharp.IconButton EyeButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -11,6 +11,7 @@ using FontAwesome.Sharp;
 using AppLaboratorio.Views;
 using AppLaboratorio.UserControlls;
 using AppLaboratorio.UserControlls.InventarioFolder;
+using AppLaboratorio.UserControlls.PrestamosFolder;
 using AppLaboratorio.Models;
 
 
@@ -70,6 +71,7 @@ namespace AppLaboratorio.Views
             ActivateButton(BtnFichas, RGBColors.color1);
             Inventario inventario = new Inventario(Usuario.Laboratorio) { Location = StartPoint };
             inventario.Crear += new Inventario.CrearDelegate(CrearHerramienta);
+            inventario.Info += new Inventario.InfoDelegate(InfoHerramienta);
             ContainerComponents.Controls.Clear();
             ContainerComponents.Controls.Add(inventario);
 
@@ -80,7 +82,11 @@ namespace AppLaboratorio.Views
 
         }
 
-        
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+            PrestamosEmpleados();
+        }
 
 
         public void CrearHerramienta()
@@ -92,6 +98,16 @@ namespace AppLaboratorio.Views
             ContainerComponents.Controls.Add(nuevoHerramineta);
             BtnBack.Visible = true;
 
+        }
+
+        public void InfoHerramienta(Herramienta herramienta)
+        {
+            this.Back += new BackDelegate(Inventario);
+            infoInventario info = new infoInventario() { Location = StartPoint };
+            info.Herramienta = herramienta;
+            ContainerComponents.Controls.Clear();
+            ContainerComponents.Controls.Add(info);
+            BtnBack.Visible = true;
         }
 
         /// <summary>
@@ -179,7 +195,7 @@ namespace AppLaboratorio.Views
             {
                 DisableButton();
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(1, 76, 76, 76);
+                currentBtn.BackColor = Color.FromArgb(28, 60, 108);
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
@@ -197,7 +213,7 @@ namespace AppLaboratorio.Views
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(82, 122, 242);
+                currentBtn.BackColor = Color.FromArgb(28, 60, 108);
                 currentBtn.ForeColor = Color.Gainsboro;
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 currentBtn.IconColor = Color.Gainsboro;
@@ -206,7 +222,59 @@ namespace AppLaboratorio.Views
             }
         }
 
+        private void PrestamosAlumnos()
+        {
+            Back += new BackDelegate(PrestamosEmpleados);
+            PrestamoEstudiante prestamoEstudiante = new PrestamoEstudiante();
+            prestamoEstudiante.Location = StartPoint;
+            prestamoEstudiante.Crear += new PrestamoEstudiante.CrearDelegate(NuevoPrestamoEstudiantes);
+            prestamoEstudiante.informacion += new PrestamoEstudiante.info(infoPrestamo);
+            prestamoEstudiante.Empleados += new PrestamoEstudiante.EmpleadosDelegate(PrestamosEmpleados);
+            ContainerComponents.Controls.Clear();
+            ContainerComponents.Controls.Add(prestamoEstudiante);
+            BtnBack.Visible = true;
+        }
+        private void PrestamosEmpleados()
+        {
+            Back += new BackDelegate(PrestamosEmpleados);
+            PrestamoEmpleado prestamoEmpleado = new PrestamoEmpleado();
+            BtnBack.Visible = false;
+            prestamoEmpleado.Location = StartPoint;
+            prestamoEmpleado.Agg += new PrestamoEmpleado.CrearDelegate(NuevoPrestamoEmpleados);
+            prestamoEmpleado.info += new PrestamoEmpleado.inf(infoPrestamo);
+            prestamoEmpleado.Estudiantes += new PrestamoEmpleado.EstudiantesDelegate(PrestamosAlumnos);
+            ContainerComponents.Controls.Clear();
+            ContainerComponents.Controls.Add(prestamoEmpleado);
+            BtnBack.Visible = false;
+        }
+        private void NuevoPrestamoEmpleados()
+        {
+            NuevoPrestamoEmpleado NprestamoEmpleado = new NuevoPrestamoEmpleado();
+            NprestamoEmpleado.Location = StartPoint;
+            ContainerComponents.Controls.Clear();
+            ContainerComponents.Controls.Add(NprestamoEmpleado);
+            BtnBack.Visible = true;
 
+        }
+        private void infoPrestamo()
+        {
+            InfoPrestamoEstudiante InfoprestamoEstudiante = new InfoPrestamoEstudiante();
+            InfoprestamoEstudiante.Location = StartPoint;
+            ContainerComponents.Controls.Clear();
+            ContainerComponents.Controls.Add(InfoprestamoEstudiante);
+            BtnBack.Visible = true;
+
+        }
+        private void NuevoPrestamoEstudiantes()
+        {
+            BtnBack.Visible = true;
+            NuevoPrestamosEstudiantes NprestamoEstudiante = new NuevoPrestamosEstudiantes();
+            BtnBack.Visible = false;
+            NprestamoEstudiante.Location = StartPoint;
+            ContainerComponents.Controls.Clear();
+            ContainerComponents.Controls.Add(NprestamoEstudiante);
+
+        }
 
 
         /// <summary>
@@ -215,7 +283,7 @@ namespace AppLaboratorio.Views
         /// 
         /// </summary>
 
-   
+
         public void ProveedoresLoad(string proveedor,string usuario,string fecha)
         {
 
@@ -228,27 +296,7 @@ namespace AppLaboratorio.Views
             this.Location = new Point(277,44);
         }
 
-        private void ShowBtnProducto()
-        {
-            BtnUser.Visible = false;
-            BtnInventario.Visible = false;
-            BtnProveedor.Visible = false;
-
-            BtnCamaron.Visible = true;
-            BtnPescado.Visible = true;
-            BtnOtros.Visible = true;
-        }
-        private void HideBtnProducto()
-        {
-            BtnUser.Visible = true;
-            BtnInventario.Visible = true;
-            BtnProveedor.Visible = true;
-
-            BtnCamaron.Visible = false;
-            BtnPescado.Visible = false;
-            BtnOtros.Visible = false;
-        }
-
+     
 
 
 
@@ -337,9 +385,6 @@ namespace AppLaboratorio.Views
 
         }
 
-        private void iconButton3_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

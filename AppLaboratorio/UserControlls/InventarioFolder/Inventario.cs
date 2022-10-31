@@ -35,6 +35,9 @@ namespace AppLaboratorio.UserControlls.InventarioFolder
         public delegate void CrearDelegate();
         public event CrearDelegate Crear;
 
+        public delegate void InfoDelegate(Herramienta herramienta);
+        public event InfoDelegate Info;
+
 
         public void LoadData(string laboratorio)
         {
@@ -82,6 +85,17 @@ namespace AppLaboratorio.UserControlls.InventarioFolder
             if (Crear!=null)
             {
                 Crear();
+            }
+        }
+
+        private void BtnInformacion_Click(object sender, EventArgs e)
+        {
+            string id = DatagridHerramienta.CurrentRow.Cells[0].Value.ToString();
+            HerramientaController herramientaController = new HerramientaController();
+            Herramienta herramienta = herramientaController.Get(id);
+            if (Info != null)
+            {
+                Info(herramienta);
             }
         }
     }

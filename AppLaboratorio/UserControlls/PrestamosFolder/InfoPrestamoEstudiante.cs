@@ -8,19 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using AppLaboratorio.Controllers;
-using AppLaboratorio.UserControlls;
-using AppLaboratorio.Models;
 
 
-namespace AppLaboratorio.UserControlls.InventarioFolder
+namespace AppLaboratorio.UserControlls.PrestamosFolder
 {
-    public partial class infoInventario : UserControl
+    public partial class InfoPrestamoEstudiante : UserControl
     {
-        public infoInventario()
+        public InfoPrestamoEstudiante()
         {
             InitializeComponent();
-            
+
 
         }
 
@@ -30,12 +27,7 @@ namespace AppLaboratorio.UserControlls.InventarioFolder
             BtnState = "1";
         }
 
-        public delegate void BackDelegate();
-        public event BackDelegate Back;
-
         string BtnState { get; set; }
-        public Herramienta Herramienta { get; set; }
-
 
 
 
@@ -67,15 +59,13 @@ namespace AppLaboratorio.UserControlls.InventarioFolder
         {
             BtnVolver.Enabled = false;
             Lbl1.Text = "Herramienta";
+            Txt1.Text = "Tipo de herramienta";
             Lbl2.Text = "Descripción";
+            Txt2.Text = "Describa brevemente la herramieta";
             Lbl3.Text = "Cantidad";
-            Lbl4.Text = "Laboratorio";
-            Lbl4.Visible = true;
-
-            Txt1.Text = Herramienta.herramienta;
-            Txt2.Text = Herramienta.descripcion;
-            Txt3.Text = Herramienta.cantidad;
-            Txt4.Text = Herramienta.laboratorio;
+            Txt3.Text = "Describa brevemente la herramieta";
+            Lbl4.Text = "Cantidad";
+            Txt4.Text = "Describa brevemente la herramieta";
             Icon2.BackColor = Color.Silver;
             Icon1.BackColor = Color.FromArgb(82, 122, 242);
             BtnState = "1";
@@ -86,13 +76,11 @@ namespace AppLaboratorio.UserControlls.InventarioFolder
         {
             BtnVolver.Enabled = true;
             Lbl1.Text = "Marca";
+            Txt1.Text = "Especifique la marca";
             Lbl2.Text = "Modelo";
+            Txt2.Text = "Especifique el modelo";
             Lbl3.Text = "No. serie";
-            Lbl4.Visible = false;
-
-            Txt1.Text = Herramienta.marca;
-            Txt2.Text = Herramienta.modelo;
-            Txt3.Text = Herramienta.numero_serie;
+            Txt3.Text = "Capture el numero de serie";
             Icon1.BackColor = Color.Silver;
             Icon2.BackColor = Color.FromArgb(82, 122, 242);
             Txt4.Visible = true;

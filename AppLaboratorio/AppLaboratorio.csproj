@@ -79,8 +79,12 @@
     <Compile Include="Controllers\Conexion.cs" />
     <Compile Include="Controllers\Encrypt.cs" />
     <Compile Include="Controllers\HerramientaController.cs" />
+    <Compile Include="Controllers\PrestamoEmpleadoController.cs" />
+    <Compile Include="Controllers\PrestamosAlumnoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Models\Herramienta.cs" />
+    <Compile Include="Models\PrestamosAlumno.cs" />
+    <Compile Include="Models\PrestamosEmpleados.cs" />
     <Compile Include="Models\Usuarios.cs" />
     <Compile Include="UserControlls\Animations.cs" />
     <Compile Include="Program.cs" />
@@ -114,6 +118,36 @@
     </Compile>
     <Compile Include="UserControlls\InventarioFolder\NuevoHerramineta.Designer.cs">
       <DependentUpon>NuevoHerramineta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlls\PrestamosFolder\InfoPrestamoEstudiante.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlls\PrestamosFolder\InfoPrestamoEstudiante.Designer.cs">
+      <DependentUpon>InfoPrestamoEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlls\PrestamosFolder\NuevoPrestamoEmpleado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlls\PrestamosFolder\NuevoPrestamoEmpleado.Designer.cs">
+      <DependentUpon>NuevoPrestamoEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlls\PrestamosFolder\NuevoPrestamosEstudiantes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlls\PrestamosFolder\NuevoPrestamosEstudiantes.Designer.cs">
+      <DependentUpon>NuevoPrestamosEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlls\PrestamosFolder\PrestamoEmpleado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlls\PrestamosFolder\PrestamoEmpleado.Designer.cs">
+      <DependentUpon>PrestamoEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlls\PrestamosFolder\PrestamoEstudiante.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlls\PrestamosFolder\PrestamoEstudiante.Designer.cs">
+      <DependentUpon>PrestamoEstudiante.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlls\Relog.cs">
       <SubType>UserControl</SubType>
@@ -186,6 +220,7 @@
     <EmbeddedResource Include="UserControlls\Calendario.resx">
       <DependentUpon>Calendario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlls\CarritoProducto.resx" />
     <EmbeddedResource Include="UserControlls\FormMessageBox.resx">
       <DependentUpon>FormMessageBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +232,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlls\InventarioFolder\NuevoHerramineta.resx">
       <DependentUpon>NuevoHerramineta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlls\PrestamosFolder\InfoPrestamoEstudiante.resx">
+      <DependentUpon>InfoPrestamoEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlls\PrestamosFolder\NuevoPrestamoEmpleado.resx">
+      <DependentUpon>NuevoPrestamoEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlls\PrestamosFolder\NuevoPrestamosEstudiantes.resx">
+      <DependentUpon>NuevoPrestamosEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlls\PrestamosFolder\PrestamoEmpleado.resx">
+      <DependentUpon>PrestamoEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlls\PrestamosFolder\PrestamoEstudiante.resx">
+      <DependentUpon>PrestamoEstudiante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlls\Relog.resx">
       <DependentUpon>Relog.cs</DependentUpon>
@@ -235,6 +285,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\exclamation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tcnm sin fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\itspp sin fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tcnm blanco.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
