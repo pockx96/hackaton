@@ -17,13 +17,30 @@ namespace AppLaboratorio
         [STAThread]
         static void Main()
         {
-            HerramientaController herramientaController = new HerramientaController();
-            List<Herramienta> List = herramientaController.Get();
+            //HerramientaController herramientaController = new HerramientaController();
+            //Herramienta herramienta = new Herramienta() 
+            //{
+            //    herramienta = "Kit de programación",
+            //    cantidad = "1",
+            //    marca = "Development tools",
+            //    modelo = "MICROCHIP",
+            //    descripcion ="",
+            //    laboratorio = "sistemas",
+            //    numero_serie = "MTI134900580"
+            //};
+            //herramientaController.Post(herramienta);
             UsuarioController userControl = new UsuarioController();
             Usuarios usuario = userControl.Get("Pock");
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new MenuUser(usuario));
         }
+
+
+
+
+
     }
 }

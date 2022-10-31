@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AppLaboratorio.Controllers;
+using AppLaboratorio.Models;
+using CustomMessageBox;
 
 
 namespace AppLaboratorio.UserControlls.InventarioFolder
@@ -21,6 +24,7 @@ namespace AppLaboratorio.UserControlls.InventarioFolder
 
         }
 
+        Herramienta herramienta = new Herramienta();
 
         private void NuevoUsuario_Load_1(object sender, EventArgs e)
         {
@@ -30,6 +34,9 @@ namespace AppLaboratorio.UserControlls.InventarioFolder
         }
 
         string BtnState { get; set; }
+        public delegate void BackDelegate();
+        public event BackDelegate Back;
+
 
         private void Clear()
         {
@@ -44,9 +51,16 @@ namespace AppLaboratorio.UserControlls.InventarioFolder
             switch (BtnState) 
             {
                 case "1":
+                    herramienta.herramienta = TxtBoxArriba.Texts;
+                    herramienta.descripcion = TxtBoxMedio.Texts;
+                    herramienta.cantidad = Convert.ToString(numericUpDown.Value);
+
                     SegundaPagina();
                     break;
                 case "2":
+                    herramienta.marca = TxtBoxArriba.Texts;
+                    herramienta.modelo = TxtBoxMedio.Texts;
+                    herramienta.numero_serie = TxtBoxAbajo.Texts;
                     GuardarHerramienta();
                     break;
             }
@@ -89,7 +103,10 @@ namespace AppLaboratorio.UserControlls.InventarioFolder
 
         private void GuardarHerramienta()
         {
-            MessageBox.Show("Guardado");
+            HerramientaController herramientaController = new HerramientaController();
+            herramientaController.Post(herramienta);
+            DialogResult result = RJMessageBox.Show("Herramienta añadida" + " !.", "Exito!");
+            Back();
         }
 
 

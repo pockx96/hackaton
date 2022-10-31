@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using AppLaboratorio.UserControlls;
+using AppLaboratorio.Models;
+using AppLaboratorio.Controllers;
 
 namespace AppLaboratorio.UserControlls.InventarioFolder
 {
@@ -17,7 +19,7 @@ namespace AppLaboratorio.UserControlls.InventarioFolder
         public Inventario(string laboratorio)
         {
             InitializeComponent();
-            this.Laboratorio = laboratorio
+            this.Laboratorio = laboratorio;
 
         }
 
@@ -25,7 +27,7 @@ namespace AppLaboratorio.UserControlls.InventarioFolder
 
         private void ListaFolios_Load(object sender, EventArgs e)
         {
-
+            LoadData(Laboratorio);
         }
 
         public string Laboratorio { get; set; }
@@ -34,9 +36,17 @@ namespace AppLaboratorio.UserControlls.InventarioFolder
         public event CrearDelegate Crear;
 
 
-        public void LoadData(string estado)
+        public void LoadData(string laboratorio)
         {
-            
+            HerramientaController herramientaController = new HerramientaController();
+            List<Herramienta> ListHerramienta = herramientaController.GetByLaboratorio(laboratorio);
+            int index;
+            foreach (Herramienta element in ListHerramienta)
+            {
+                index = DatagridHerramienta.RowCount - 1;
+                DatagridHerramienta.Rows.Insert(index,Convert.ToString(element.IdHerramienta),element.herramienta,element.cantidad);
+            }
+
 
 
         }
@@ -54,7 +64,7 @@ namespace AppLaboratorio.UserControlls.InventarioFolder
         private void DatagridFolios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Animations animations = new Animations();
-            Point Location = animations.BtnlocationDatagrid(DatagridHerramienta,305,Cursor.Position.Y,new Point(440, 163),12);
+            Point Location = animations.BtnlocationDatagrid(DatagridHerramienta,318,Cursor.Position.Y,new Point(440, 158),12);
             OptionsContainer.Location = Location;
             DatagridHerramienta.CurrentRow.Selected = true;
         }

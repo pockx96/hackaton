@@ -32,7 +32,7 @@ namespace AppLaboratorio.Views
         private void MenuAdmin_Load(object sender, EventArgs e)
         {
 
-            Inicio();
+            Inventario();
             
         }
 
@@ -65,10 +65,10 @@ namespace AppLaboratorio.Views
         /// <summary>
         /// Boton de folios
         /// <summary>
-        private void Inicio()
+        private void Inventario()
         {
             ActivateButton(BtnFichas, RGBColors.color1);
-            Inventario inventario = new Inventario() { Location = StartPoint };
+            Inventario inventario = new Inventario(Usuario.Laboratorio) { Location = StartPoint };
             inventario.Crear += new Inventario.CrearDelegate(CrearHerramienta);
             ContainerComponents.Controls.Clear();
             ContainerComponents.Controls.Add(inventario);
@@ -76,7 +76,7 @@ namespace AppLaboratorio.Views
         }
         private void BtnFichas_Click(object sender, EventArgs e)
         {
-            Inicio();
+            Inventario();
 
         }
 
@@ -85,8 +85,9 @@ namespace AppLaboratorio.Views
 
         public void CrearHerramienta()
         {
-            this.Back += new BackDelegate(Inicio);
+            this.Back += new BackDelegate(Inventario);
             NuevaHerramienta nuevoHerramineta = new NuevaHerramienta() { Location = StartPoint };
+            nuevoHerramineta.Back += new NuevaHerramienta.BackDelegate(Inventario);
             ContainerComponents.Controls.Clear();
             ContainerComponents.Controls.Add(nuevoHerramineta);
             BtnBack.Visible = true;
