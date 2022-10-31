@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace AppLaboratorio.UserControlls.InventarioFolder
 {
-    public partial class NuevoHerramineta : UserControl
+    public partial class NuevaHerramienta : UserControl
     {
-        public NuevoHerramineta()
+        public NuevaHerramienta()
         {
             InitializeComponent();
 

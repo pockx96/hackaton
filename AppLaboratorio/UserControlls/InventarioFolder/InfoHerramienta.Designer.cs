@@ -1,6 +1,6 @@
 ﻿namespace AppLaboratorio.UserControlls.InventarioFolder
 {
-    partial class InfoHerramienta
+    partial class infoInventario
     {
         /// <summary> 
         /// Variable del diseñador necesaria.

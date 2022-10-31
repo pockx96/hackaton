@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace AppLaboratorio.Models
 {
-    internal class Herramienta
+    public class Herramienta
     {
+        public int IdHerramienta { get; set; }
+        public string herramienta { get; set; }
+        public string marca { get; set; }
+        public string modelo { get; set; }
+        public string numero_serie { get; set; }
+        public string cantidad { get; set; }
+        public string descripcion { get; set; }
+        public string laboratorio { get; set; }
     }
 }

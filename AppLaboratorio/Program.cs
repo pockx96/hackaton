@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AppLaboratorio.Views;
+using AppLaboratorio.Controllers;
+using AppLaboratorio.Models;
 
 namespace AppLaboratorio
 {
@@ -15,9 +17,13 @@ namespace AppLaboratorio
         [STAThread]
         static void Main()
         {
+            HerramientaController herramientaController = new HerramientaController();
+            List<Herramienta> List = herramientaController.Get();
+            UsuarioController userControl = new UsuarioController();
+            Usuarios usuario = userControl.Get("Pock");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuUser());
+            Application.Run(new Login());
         }
     }
 }

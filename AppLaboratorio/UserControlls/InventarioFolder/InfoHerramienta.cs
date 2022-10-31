@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace AppLaboratorio.UserControlls.InventarioFolder
 {
-    public partial class InfoHerramienta : UserControl
+    public partial class infoInventario : UserControl
     {
-        public InfoHerramienta()
+        public infoInventario()
         {
             InitializeComponent();
 

@@ -10,20 +10,25 @@ using System.Windows.Forms;
 using FontAwesome.Sharp;
 using AppLaboratorio.UserControlls;
 
-namespace AppLaboratorio.UserControlls
+namespace AppLaboratorio.UserControlls.InventarioFolder
 {
     public partial class Inventario : UserControl
     {
-        public Inventario()
+        public Inventario(string laboratorio)
         {
             InitializeComponent();
+            this.Laboratorio = laboratorio
 
         }
+
+
 
         private void ListaFolios_Load(object sender, EventArgs e)
         {
 
         }
+
+        public string Laboratorio { get; set; }
 
         public delegate void CrearDelegate();
         public event CrearDelegate Crear;

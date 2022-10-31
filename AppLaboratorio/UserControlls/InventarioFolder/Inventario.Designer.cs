@@ -1,4 +1,4 @@
-﻿namespace AppLaboratorio.UserControlls
+﻿namespace AppLaboratorio.UserControlls.InventarioFolder
 {
     partial class Inventario
     {

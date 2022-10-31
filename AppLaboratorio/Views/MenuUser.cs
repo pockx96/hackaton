@@ -11,15 +11,18 @@ using FontAwesome.Sharp;
 using AppLaboratorio.Views;
 using AppLaboratorio.UserControlls;
 using AppLaboratorio.UserControlls.InventarioFolder;
+using AppLaboratorio.Models;
 
 
 namespace AppLaboratorio.Views
 {
     public partial class MenuUser : Form
     {
-        public MenuUser()
+        public MenuUser(Usuarios usuario)
         {
             InitializeComponent();
+            this.Usuario = usuario;
+
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 64);
             MenuContainer.Controls.Add(leftBorderBtn);
@@ -33,7 +36,7 @@ namespace AppLaboratorio.Views
             
         }
 
-        public string Usuario { get; set; }
+        public Usuarios Usuario { get; set; }
         public string Fecha { get; set; }
 
         public Point StartPoint = new Point(0, 0);   
@@ -83,7 +86,7 @@ namespace AppLaboratorio.Views
         public void CrearHerramienta()
         {
             this.Back += new BackDelegate(Inicio);
-            NuevoHerramineta nuevoHerramineta = new NuevoHerramineta() { Location = StartPoint };
+            NuevaHerramienta nuevoHerramineta = new NuevaHerramienta() { Location = StartPoint };
             ContainerComponents.Controls.Clear();
             ContainerComponents.Controls.Add(nuevoHerramineta);
             BtnBack.Visible = true;
