@@ -33,6 +33,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.TxtCantidad = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Lbl4 = new System.Windows.Forms.Label();
+            this.TxtBox4 = new AppLaboratorio.UserControlls.RJTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Lbl1 = new System.Windows.Forms.Label();
@@ -45,9 +48,7 @@
             this.Icon2 = new AppLaboratorio.UserControlls.BotonRedondo();
             this.Icon1 = new AppLaboratorio.UserControlls.BotonRedondo();
             this.BtnGuardar = new AppLaboratorio.UserControlls.BotonRedondo();
-            this.Lbl4 = new System.Windows.Forms.Label();
-            this.TxtBox4 = new AppLaboratorio.UserControlls.RJTextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.CmboxHerramienta = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TxtCantidad)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +86,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.CmboxHerramienta);
             this.groupBox2.Controls.Add(this.TxtCantidad);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.Lbl4);
@@ -113,6 +115,50 @@
             this.TxtCantidad.Size = new System.Drawing.Size(98, 26);
             this.TxtCantidad.TabIndex = 57;
             this.TxtCantidad.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(28, 292);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(216, 20);
+            this.label4.TabIndex = 61;
+            this.label4.Text = "_______________________";
+            // 
+            // Lbl4
+            // 
+            this.Lbl4.AutoSize = true;
+            this.Lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl4.ForeColor = System.Drawing.SystemColors.Control;
+            this.Lbl4.Location = new System.Drawing.Point(26, 318);
+            this.Lbl4.Name = "Lbl4";
+            this.Lbl4.Size = new System.Drawing.Size(108, 20);
+            this.Lbl4.TabIndex = 60;
+            this.Lbl4.Text = "Herramienta";
+            // 
+            // TxtBox4
+            // 
+            this.TxtBox4.BackColor = System.Drawing.SystemColors.Window;
+            this.TxtBox4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(152)))), ((int)(((byte)(152)))));
+            this.TxtBox4.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(122)))), ((int)(((byte)(242)))));
+            this.TxtBox4.BorderRadius = 0;
+            this.TxtBox4.BorderSize = 2;
+            this.TxtBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.TxtBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TxtBox4.Location = new System.Drawing.Point(30, 342);
+            this.TxtBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtBox4.Multiline = false;
+            this.TxtBox4.Name = "TxtBox4";
+            this.TxtBox4.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TxtBox4.PasswordChar = false;
+            this.TxtBox4.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TxtBox4.PlaceholderText = "Tipo de herramienta";
+            this.TxtBox4.Size = new System.Drawing.Size(273, 35);
+            this.TxtBox4.TabIndex = 59;
+            this.TxtBox4.Texts = "";
+            this.TxtBox4.UnderlinedStyle = false;
             // 
             // label1
             // 
@@ -322,49 +368,13 @@
             this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
-            // Lbl4
+            // CmboxHerramienta
             // 
-            this.Lbl4.AutoSize = true;
-            this.Lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl4.ForeColor = System.Drawing.SystemColors.Control;
-            this.Lbl4.Location = new System.Drawing.Point(26, 318);
-            this.Lbl4.Name = "Lbl4";
-            this.Lbl4.Size = new System.Drawing.Size(108, 20);
-            this.Lbl4.TabIndex = 60;
-            this.Lbl4.Text = "Herramienta";
-            // 
-            // TxtBox4
-            // 
-            this.TxtBox4.BackColor = System.Drawing.SystemColors.Window;
-            this.TxtBox4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(152)))), ((int)(((byte)(152)))));
-            this.TxtBox4.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(122)))), ((int)(((byte)(242)))));
-            this.TxtBox4.BorderRadius = 0;
-            this.TxtBox4.BorderSize = 2;
-            this.TxtBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.TxtBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TxtBox4.Location = new System.Drawing.Point(30, 342);
-            this.TxtBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtBox4.Multiline = false;
-            this.TxtBox4.Name = "TxtBox4";
-            this.TxtBox4.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.TxtBox4.PasswordChar = false;
-            this.TxtBox4.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.TxtBox4.PlaceholderText = "Tipo de herramienta";
-            this.TxtBox4.Size = new System.Drawing.Size(273, 35);
-            this.TxtBox4.TabIndex = 59;
-            this.TxtBox4.Texts = "";
-            this.TxtBox4.UnderlinedStyle = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(28, 292);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(216, 20);
-            this.label4.TabIndex = 61;
-            this.label4.Text = "_______________________";
+            this.CmboxHerramienta.FormattingEnabled = true;
+            this.CmboxHerramienta.Location = new System.Drawing.Point(31, 53);
+            this.CmboxHerramienta.Name = "CmboxHerramienta";
+            this.CmboxHerramienta.Size = new System.Drawing.Size(273, 28);
+            this.CmboxHerramienta.TabIndex = 90;
             // 
             // NuevoPrestamoEmpleado
             // 
@@ -410,5 +420,6 @@
         private System.Windows.Forms.Label Lbl4;
         private RJTextBox TxtBox4;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox CmboxHerramienta;
     }
 }

@@ -25,6 +25,7 @@ namespace AppLaboratorio.UserControlls.PrestamosFolder
         private void NuevoPrestamosEstudiantes_Load(object sender, EventArgs e)
         {
             PrimeraPagina();
+            LoadCatalago();
         }
 
         public string Laboratorio { get; set; }
@@ -58,7 +59,7 @@ namespace AppLaboratorio.UserControlls.PrestamosFolder
                     SegundaPagina();
                     break;
                 case "2":
-                    PrestamoEmpleado.herramienta= TxtBox1.Texts;
+                    PrestamoEmpleado.herramienta= CmboxHerramienta.Text;
                     PrestamoEmpleado.cantidad = TxtCantidad.Value.ToString();
                     PrestamoEmpleado.fecha_regreso = TxtSalida.Text;
                     PrestamoEmpleado.fecha_salida = DateToday;
@@ -78,6 +79,8 @@ namespace AppLaboratorio.UserControlls.PrestamosFolder
             BtnState = "1";
             BtnVolver.Enabled = false;
             Lbl1.Text = "No. Empleado:";
+            TxtBox1.Visible = true;
+            CmboxHerramienta.Visible = false;
             TxtBox1.PlaceholderText = "Numero de empleado del docente";
             Lbl2.Text = "Nombre:";
             TxtBox2.Visible = true;
@@ -102,7 +105,8 @@ namespace AppLaboratorio.UserControlls.PrestamosFolder
             Icon2.ForeColor = Color.White;
             BtnState = "2";
             Lbl1.Text = "Herramienta:";
-            TxtBox1.PlaceholderText = "Herramienta solicitada";
+            TxtBox1.Visible = false;
+            CmboxHerramienta.Visible = true;
             Lbl2.Text = "Cantidad:";
             TxtBox2.Visible = false;
             TxtCantidad.Visible = true;
@@ -138,6 +142,18 @@ namespace AppLaboratorio.UserControlls.PrestamosFolder
             Back();
         }
 
+
+        private void LoadCatalago()
+        {
+            HerramientaController herramientaController = new HerramientaController();
+            List<Herramienta> ListHerramientas = herramientaController.GetByLaboratorio(Laboratorio);
+
+            foreach (Herramienta herramienta in ListHerramientas)
+            {
+                CmboxHerramienta.Items.Add(herramienta.herramienta);
+            }
+
+        }
         private void BtnVolver_Click(object sender, EventArgs e)
         {
             PrimeraPagina();

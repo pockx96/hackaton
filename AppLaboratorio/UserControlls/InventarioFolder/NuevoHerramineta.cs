@@ -74,7 +74,7 @@ namespace AppLaboratorio.UserControlls.InventarioFolder
         private void PrimeraPagina()
         {
             BtnVolver.Enabled = false;
-            LblAbajo.Text = "Herramienta";
+            LblArriba.Text = "Herramienta";
             TxtBoxArriba.PlaceholderText = "Tipo de herramienta";
             LblMedio.Text = "Descripción";
             TxtBoxMedio.PlaceholderText = "Describa brevemente la herramieta";

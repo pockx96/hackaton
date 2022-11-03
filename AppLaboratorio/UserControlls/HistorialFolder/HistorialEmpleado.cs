@@ -86,5 +86,10 @@ namespace AppLaboratorio.UserControlls.HistorialFolder
                 DatagridHerramienta.Rows.Insert(index, element.numero_de_control, element.nombre, element.celular, element.necesidad, element.herramienta, element.cantidad, element.fecha_salida, element.fecha_regreso);
             }
         }
+
+        private void DatagridHerramienta_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DatagridHerramienta.CurrentRow.Selected = true;
+        }
     }
 }

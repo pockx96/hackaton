@@ -90,6 +90,47 @@ namespace AppLaboratorio.Controllers
             }
             return prestamos;
         }
+        public List<PrestamosAlumno> GetByLaboratorio(string lab)
+        {
+            List<PrestamosAlumno> lista = new List<PrestamosAlumno>();
+            string query = $"SELECT * FROM prestamo_alumno where Laboratorio = '{lab}'";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                MySqlCommand command = new MySqlCommand(query, connection);
+                try
+                {
+                    connection.Open();
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        PrestamosAlumno prestamos = new PrestamosAlumno();
+                        prestamos.matricula = reader.GetString(0);
+                        prestamos.nombre = reader.GetString(1);
+                        prestamos.materia = reader.GetString(2);
+                        prestamos.Herramienta = reader.GetString(3);
+                        prestamos.cantidad = reader.GetString(4);
+                        prestamos.fecha_salida = reader.GetString(5);
+                        prestamos.fecha_regreso = reader.GetString(6);
+                        prestamos.Estado = reader.GetString(7);
+                        prestamos.Laboratprio = reader.GetString(8);
+
+                        lista.Add(prestamos);
+
+                    }
+                    reader.Close();
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("error de la base de datos : " + ex);
+
+                }
+
+            }
+            return lista;
+        }
         public List<PrestamosAlumno> GetByHerramienta(string lab)
         {
             List<PrestamosAlumno> lista = new List<PrestamosAlumno>();

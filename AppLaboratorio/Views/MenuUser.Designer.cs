@@ -90,7 +90,7 @@ namespace AppLaboratorio.Views
             this.BtnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.BtnUser.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnUser.IconChar = FontAwesome.Sharp.IconChar.Hippo;
+            this.BtnUser.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
             this.BtnUser.IconColor = System.Drawing.Color.White;
             this.BtnUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnUser.Location = new System.Drawing.Point(3, 330);

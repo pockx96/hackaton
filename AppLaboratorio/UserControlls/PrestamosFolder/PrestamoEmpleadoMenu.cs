@@ -52,7 +52,7 @@ namespace AppLaboratorio.UserControlls.PrestamosFolder
         {
             DatagridEmpleados.Rows.Clear();
             LoadData();
-            DatagridEmpleados.CurrentRow.Selected = true;
+
         }
 
         private void LoadData()

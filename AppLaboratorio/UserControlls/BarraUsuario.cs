@@ -26,6 +26,11 @@ namespace AppLaboratorio.UserControlls
             }
         }
 
+        public void LoadName(string name)
+        {
+            LblUser.Text = name;
+        }
+
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 

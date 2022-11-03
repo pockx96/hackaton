@@ -34,7 +34,7 @@ namespace AppLaboratorio.Views
 
         private void MenuAdmin_Load(object sender, EventArgs e)
         {
-
+            TitleUsuario.LoadName(Usuario.id_usuario);
             Inventario();
             
         }
@@ -160,7 +160,9 @@ namespace AppLaboratorio.Views
 
         private void BtnUser_Click(object sender, EventArgs e)
         {
-
+            Login login = new Login();
+            login.Show();
+            this.Close();
 
         }
         ////Boton de producto

@@ -32,19 +32,20 @@
             this.TxtSalida = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.TxtCantidad = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.LblArriba = new System.Windows.Forms.Label();
             this.LblAbajo = new System.Windows.Forms.Label();
             this.LblMedio = new System.Windows.Forms.Label();
-            this.TxtCantidad = new System.Windows.Forms.NumericUpDown();
             this.BtnVolver = new AppLaboratorio.UserControlls.BotonRedondo();
             this.TxtBoxArriba = new AppLaboratorio.UserControlls.RJTextBox();
-            this.TxtBoxMedio = new AppLaboratorio.UserControlls.RJTextBox();
             this.TxtBoxAbajo = new AppLaboratorio.UserControlls.RJTextBox();
             this.Icon2 = new AppLaboratorio.UserControlls.BotonRedondo();
             this.Icon1 = new AppLaboratorio.UserControlls.BotonRedondo();
             this.BtnGuardar = new AppLaboratorio.UserControlls.BotonRedondo();
+            this.CmBoxHerramienta = new System.Windows.Forms.ComboBox();
+            this.TxtBoxMedio = new AppLaboratorio.UserControlls.RJTextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TxtCantidad)).BeginInit();
             this.SuspendLayout();
@@ -81,6 +82,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.CmBoxHerramienta);
             this.groupBox2.Controls.Add(this.TxtCantidad);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.TxtSalida);
@@ -97,6 +99,14 @@
             this.groupBox2.Size = new System.Drawing.Size(330, 355);
             this.groupBox2.TabIndex = 88;
             this.groupBox2.TabStop = false;
+            // 
+            // TxtCantidad
+            // 
+            this.TxtCantidad.Location = new System.Drawing.Point(37, 159);
+            this.TxtCantidad.Name = "TxtCantidad";
+            this.TxtCantidad.Size = new System.Drawing.Size(98, 26);
+            this.TxtCantidad.TabIndex = 57;
+            this.TxtCantidad.Visible = false;
             // 
             // label1
             // 
@@ -151,14 +161,6 @@
             this.LblMedio.TabIndex = 29;
             this.LblMedio.Text = "Descripción";
             // 
-            // TxtCantidad
-            // 
-            this.TxtCantidad.Location = new System.Drawing.Point(37, 159);
-            this.TxtCantidad.Name = "TxtCantidad";
-            this.TxtCantidad.Size = new System.Drawing.Size(98, 26);
-            this.TxtCantidad.TabIndex = 57;
-            this.TxtCantidad.Visible = false;
-            // 
             // BtnVolver
             // 
             this.BtnVolver.BackColor = System.Drawing.Color.White;
@@ -203,29 +205,6 @@
             this.TxtBoxArriba.TabIndex = 39;
             this.TxtBoxArriba.Texts = "";
             this.TxtBoxArriba.UnderlinedStyle = false;
-            // 
-            // TxtBoxMedio
-            // 
-            this.TxtBoxMedio.BackColor = System.Drawing.SystemColors.Window;
-            this.TxtBoxMedio.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(152)))), ((int)(((byte)(152)))));
-            this.TxtBoxMedio.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(122)))), ((int)(((byte)(242)))));
-            this.TxtBoxMedio.BorderRadius = 0;
-            this.TxtBoxMedio.BorderSize = 2;
-            this.TxtBoxMedio.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtBoxMedio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.TxtBoxMedio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TxtBoxMedio.Location = new System.Drawing.Point(35, 159);
-            this.TxtBoxMedio.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtBoxMedio.Multiline = false;
-            this.TxtBoxMedio.Name = "TxtBoxMedio";
-            this.TxtBoxMedio.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.TxtBoxMedio.PasswordChar = false;
-            this.TxtBoxMedio.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.TxtBoxMedio.PlaceholderText = "Describa brevemente la herramieta";
-            this.TxtBoxMedio.Size = new System.Drawing.Size(269, 35);
-            this.TxtBoxMedio.TabIndex = 25;
-            this.TxtBoxMedio.Texts = "";
-            this.TxtBoxMedio.UnderlinedStyle = false;
             // 
             // TxtBoxAbajo
             // 
@@ -312,6 +291,37 @@
             this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
+            // CmBoxHerramienta
+            // 
+            this.CmBoxHerramienta.FormattingEnabled = true;
+            this.CmBoxHerramienta.Location = new System.Drawing.Point(31, 53);
+            this.CmBoxHerramienta.Name = "CmBoxHerramienta";
+            this.CmBoxHerramienta.Size = new System.Drawing.Size(269, 28);
+            this.CmBoxHerramienta.TabIndex = 90;
+            // 
+            // TxtBoxMedio
+            // 
+            this.TxtBoxMedio.BackColor = System.Drawing.SystemColors.Window;
+            this.TxtBoxMedio.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(152)))), ((int)(((byte)(152)))));
+            this.TxtBoxMedio.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(122)))), ((int)(((byte)(242)))));
+            this.TxtBoxMedio.BorderRadius = 0;
+            this.TxtBoxMedio.BorderSize = 2;
+            this.TxtBoxMedio.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtBoxMedio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.TxtBoxMedio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TxtBoxMedio.Location = new System.Drawing.Point(35, 159);
+            this.TxtBoxMedio.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtBoxMedio.Multiline = false;
+            this.TxtBoxMedio.Name = "TxtBoxMedio";
+            this.TxtBoxMedio.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TxtBoxMedio.PasswordChar = false;
+            this.TxtBoxMedio.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TxtBoxMedio.PlaceholderText = "Describa brevemente la herramieta";
+            this.TxtBoxMedio.Size = new System.Drawing.Size(269, 35);
+            this.TxtBoxMedio.TabIndex = 25;
+            this.TxtBoxMedio.Texts = "";
+            this.TxtBoxMedio.UnderlinedStyle = false;
+            // 
             // NuevoPrestamosAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,9 +359,10 @@
         private RJTextBox TxtBoxArriba;
         private System.Windows.Forms.Label LblAbajo;
         private System.Windows.Forms.Label LblMedio;
-        private RJTextBox TxtBoxMedio;
         private RJTextBox TxtBoxAbajo;
         private BotonRedondo BtnVolver;
         private System.Windows.Forms.NumericUpDown TxtCantidad;
+        private System.Windows.Forms.ComboBox CmBoxHerramienta;
+        private RJTextBox TxtBoxMedio;
     }
 }

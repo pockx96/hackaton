@@ -93,6 +93,48 @@ namespace AppLaboratorio.Controllers
             return prestamos;
         }
 
+        public List<PrestamosEmpleados> GetByLaboratorio(string lab)
+        {
+            List<PrestamosEmpleados> lista = new List<PrestamosEmpleados>();
+            string query = $"SELECT * FROM prestamo_empleado where Laboratorio = {lab}'";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                MySqlCommand command = new MySqlCommand(query, connection);
+                try
+                {
+                    connection.Open();
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        PrestamosEmpleados prestamos = new PrestamosEmpleados();
+                        prestamos.numero_de_control = reader.GetString(0);
+                        prestamos.nombre = reader.GetString(1);
+                        prestamos.celular = reader.GetString(2);
+                        prestamos.necesidad = reader.GetString(3);
+                        prestamos.herramienta = reader.GetString(4);
+                        prestamos.cantidad = reader.GetString(5);
+                        prestamos.fecha_salida = reader.GetString(6);
+                        prestamos.fecha_regreso = reader.GetString(7);
+                        prestamos.Estado = reader.GetString(8);
+                        prestamos.Laboratorio = reader.GetString(9);
+                        lista.Add(prestamos);
+
+                    }
+                    reader.Close();
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("error de la base de datos : " + ex);
+
+                }
+
+            }
+            return lista;
+        }
+
         public List<PrestamosEmpleados> GetByHerramienta(string lab)
         {
             List<PrestamosEmpleados> lista = new List<PrestamosEmpleados>();

@@ -26,7 +26,6 @@ namespace AppLaboratorio.UserControlls.PrestamosFolder
         {
             DatagridAlumno.Rows.Clear();
             LoadData();
-            DatagridAlumno.CurrentRow.Selected = true;
 
         }
         public string Laboratorio { get; set; }

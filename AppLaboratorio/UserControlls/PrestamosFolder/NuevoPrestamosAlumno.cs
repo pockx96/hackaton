@@ -24,6 +24,7 @@ namespace AppLaboratorio.UserControlls.PrestamosFolder
         private void NuevoPrestamosEstudiantes_Load(object sender, EventArgs e)
         {
             PrimeraPagina();
+            LoadCatalago();
         }
 
 
@@ -36,7 +37,7 @@ namespace AppLaboratorio.UserControlls.PrestamosFolder
         private void Clear()
         {
             TxtBoxArriba.Text = "";
-            TxtBoxMedio.Text = "";
+            CmBoxHerramienta.Text = "";
             TxtSalida.Text = "";
             TxtBoxAbajo.Texts = "";
             TxtCantidad.Value = 0;
@@ -56,7 +57,7 @@ namespace AppLaboratorio.UserControlls.PrestamosFolder
                     SegundaPagina();
                     break;
                 case "2":
-                    PrestamoAlumno.Herramienta= TxtBoxArriba.Texts;
+                    PrestamoAlumno.Herramienta= CmBoxHerramienta.Text;
                     PrestamoAlumno.cantidad = TxtCantidad.Value.ToString();
                     PrestamoAlumno.fecha_regreso = TxtSalida.Text;
                     PrestamoAlumno.fecha_salida = DateToday;
@@ -86,6 +87,8 @@ namespace AppLaboratorio.UserControlls.PrestamosFolder
             TxtCantidad.Visible = false;
             TxtSalida.Visible = false;
             BtnGuardar.Text = "Siguiente";
+            CmBoxHerramienta.Visible = false;
+            TxtBoxArriba.Visible = true;
 
         }
 
@@ -100,12 +103,15 @@ namespace AppLaboratorio.UserControlls.PrestamosFolder
             LblArriba.Text = "Herramienta:";
             TxtBoxArriba.PlaceholderText = "Herramienta solicitada";
             LblMedio.Text = "Cantidad:";
-            TxtBoxMedio.Visible = false;
+            CmBoxHerramienta.Visible = false;
             TxtCantidad.Visible = true;
             LblAbajo.Text = "Fecha de Regreso";
             TxtSalida.Visible= true;
             TxtBoxAbajo.Visible = false;
             BtnGuardar.Text = "Guardar";
+            CmBoxHerramienta.Visible = true;
+            TxtBoxArriba.Visible = false;
+            TxtBoxMedio.Visible = false;
 
         }
         private void GuardarHerramienta()
@@ -131,6 +137,20 @@ namespace AppLaboratorio.UserControlls.PrestamosFolder
             DialogResult result = RJMessageBox.Show("Prestamo Realizado" + " !.", "Exito!");
             Back();
         }
+
+        private void LoadCatalago()
+        {
+            HerramientaController herramientaController = new HerramientaController();
+            List<Herramienta> ListHerramientas = herramientaController.GetByLaboratorio(Laboratorio);
+
+            foreach (Herramienta herramienta in ListHerramientas)
+            {
+                CmBoxHerramienta.Items.Add(herramienta.herramienta);
+            }
+                //CmBoxHerramienta.Items.Add(herramienta.herramienta);
+
+        }
+
 
         private void BtnVolver_Click(object sender, EventArgs e)
         {

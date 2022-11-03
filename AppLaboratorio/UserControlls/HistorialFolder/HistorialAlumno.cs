@@ -100,5 +100,15 @@ namespace AppLaboratorio.UserControlls.HistorialFolder
                 Empleado();
             }
         }
+
+        private void DatagridHerramienta_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DatagridHerramienta.CurrentRow.Selected = true;
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }    
 }
