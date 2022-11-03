@@ -13,6 +13,7 @@ using AppLaboratorio.UserControlls;
 using AppLaboratorio.UserControlls.InventarioFolder;
 using AppLaboratorio.UserControlls.PrestamosFolder;
 using AppLaboratorio.Models;
+using AppLaboratorio.UserControlls.HistorialFolder;
 
 
 namespace AppLaboratorio.Views
@@ -27,6 +28,7 @@ namespace AppLaboratorio.Views
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 64);
             MenuContainer.Controls.Add(leftBorderBtn);
+
 
         }
 
@@ -92,7 +94,7 @@ namespace AppLaboratorio.Views
         public void CrearHerramienta()
         {
             this.Back += new BackDelegate(Inventario);
-            NuevaHerramienta nuevoHerramineta = new NuevaHerramienta() { Location = StartPoint };
+            NuevaHerramienta nuevoHerramineta = new NuevaHerramienta(Usuario.Laboratorio) { Location = StartPoint };
             nuevoHerramineta.Back += new NuevaHerramienta.BackDelegate(Inventario);
             ContainerComponents.Controls.Clear();
             ContainerComponents.Controls.Add(nuevoHerramineta);
@@ -225,11 +227,11 @@ namespace AppLaboratorio.Views
         private void PrestamosAlumnos()
         {
             Back += new BackDelegate(PrestamosEmpleados);
-            PrestamoEstudiante prestamoEstudiante = new PrestamoEstudiante();
+            PrestamoAlumnoMenu prestamoEstudiante = new PrestamoAlumnoMenu(Usuario.Laboratorio);
             prestamoEstudiante.Location = StartPoint;
-            prestamoEstudiante.Crear += new PrestamoEstudiante.CrearDelegate(NuevoPrestamoEstudiantes);
-            prestamoEstudiante.informacion += new PrestamoEstudiante.info(infoPrestamo);
-            prestamoEstudiante.Empleados += new PrestamoEstudiante.EmpleadosDelegate(PrestamosEmpleados);
+            prestamoEstudiante.Crear += new PrestamoAlumnoMenu.CrearDelegate(NuevoPrestamoEstudiantes);
+            prestamoEstudiante.informacion += new PrestamoAlumnoMenu.info(infoPrestamoAlumno);
+            prestamoEstudiante.Empleados += new PrestamoAlumnoMenu.EmpleadosDelegate(PrestamosEmpleados);
             ContainerComponents.Controls.Clear();
             ContainerComponents.Controls.Add(prestamoEstudiante);
             BtnBack.Visible = true;
@@ -237,154 +239,100 @@ namespace AppLaboratorio.Views
         private void PrestamosEmpleados()
         {
             Back += new BackDelegate(PrestamosEmpleados);
-            PrestamoEmpleado prestamoEmpleado = new PrestamoEmpleado();
+            PrestamoEmpleadoMenu prestamoEmpleado = new PrestamoEmpleadoMenu(Usuario.Laboratorio);
             BtnBack.Visible = false;
             prestamoEmpleado.Location = StartPoint;
-            prestamoEmpleado.Agg += new PrestamoEmpleado.CrearDelegate(NuevoPrestamoEmpleados);
-            prestamoEmpleado.info += new PrestamoEmpleado.inf(infoPrestamo);
-            prestamoEmpleado.Estudiantes += new PrestamoEmpleado.EstudiantesDelegate(PrestamosAlumnos);
+            prestamoEmpleado.Crear += new PrestamoEmpleadoMenu.CrearDelegate(NuevoPrestamoEmpleados);
+            prestamoEmpleado.Info += new PrestamoEmpleadoMenu.infoDelegado(infoPrestamoEmpleado);
+            prestamoEmpleado.Estudiantes += new PrestamoEmpleadoMenu.EstudiantesDelegate(PrestamosAlumnos);
             ContainerComponents.Controls.Clear();
             ContainerComponents.Controls.Add(prestamoEmpleado);
             BtnBack.Visible = false;
         }
         private void NuevoPrestamoEmpleados()
         {
-            NuevoPrestamoEmpleado NprestamoEmpleado = new NuevoPrestamoEmpleado();
+            NuevoPrestamoEmpleado NprestamoEmpleado = new NuevoPrestamoEmpleado(Usuario.Laboratorio);
+            NprestamoEmpleado.Back += new NuevoPrestamoEmpleado.BackDelegate(PrestamosEmpleados);
             NprestamoEmpleado.Location = StartPoint;
             ContainerComponents.Controls.Clear();
             ContainerComponents.Controls.Add(NprestamoEmpleado);
             BtnBack.Visible = true;
 
         }
-        private void infoPrestamo()
-        {
-            InfoPrestamoEstudiante InfoprestamoEstudiante = new InfoPrestamoEstudiante();
-            InfoprestamoEstudiante.Location = StartPoint;
-            ContainerComponents.Controls.Clear();
-            ContainerComponents.Controls.Add(InfoprestamoEstudiante);
-            BtnBack.Visible = true;
 
-        }
         private void NuevoPrestamoEstudiantes()
         {
-            BtnBack.Visible = true;
-            NuevoPrestamosEstudiantes NprestamoEstudiante = new NuevoPrestamosEstudiantes();
-            BtnBack.Visible = false;
-            NprestamoEstudiante.Location = StartPoint;
+            NuevoPrestamosAlumno prestamoEstudiante = new NuevoPrestamosAlumno(Usuario.Laboratorio);
+            prestamoEstudiante.Back += new NuevoPrestamosAlumno.BackDelegate(PrestamosAlumnos);
+            prestamoEstudiante.Location = StartPoint;
             ContainerComponents.Controls.Clear();
-            ContainerComponents.Controls.Add(NprestamoEstudiante);
+            ContainerComponents.Controls.Add(prestamoEstudiante);
+            BtnBack.Visible = true;
 
         }
 
+        private void infoPrestamoAlumno(PrestamosAlumno prestamo)
+        {
+            InfoPrestamoAlumno Infoprestamo = new InfoPrestamoAlumno(prestamo);
+            Infoprestamo.Back += new InfoPrestamoAlumno.backDelegate(PrestamosAlumnos);
+            Infoprestamo.Location = StartPoint;
+            ContainerComponents.Controls.Clear();
+            ContainerComponents.Controls.Add(Infoprestamo);
+            Back += new MenuUser.BackDelegate(PrestamosAlumnos);
+            BtnBack.Visible = true;
+
+        }
+
+        private void infoPrestamoEmpleado(PrestamosEmpleados prestamo)
+        {
+            InfoPrestamoEmpleado Infoprestamo = new InfoPrestamoEmpleado(prestamo);
+            Infoprestamo.Location = StartPoint;
+            ContainerComponents.Controls.Clear();
+            ContainerComponents.Controls.Add(Infoprestamo);
+            Back += new MenuUser.BackDelegate(PrestamosEmpleados);
+            BtnBack.Visible = true;
+
+        }
 
         /// <summary>
         /// 
-        /// Ficha de entradas
+        /// Historial
         /// 
         /// </summary>
 
-
-        public void ProveedoresLoad(string proveedor,string usuario,string fecha)
+        private void HistorialEmpleado()
         {
 
+            HistorialEmpleado historialEmpleado = new HistorialEmpleado();
+            historialEmpleado.Location = StartPoint;
+            BtnBack.Visible = false;
+            historialEmpleado.Alumno += new HistorialEmpleado.HistorialAlumnoDelegate(HistorialAlumno);
+            ContainerComponents.Controls.Clear();
+            ContainerComponents.Controls.Add(historialEmpleado);
+            BtnBack.Visible = true;
         }
-     
 
-       
+        public void HistorialAlumno()
+        {
+            HistorialAlumno historialAlumno = new HistorialAlumno();
+            historialAlumno.Location = StartPoint;
+            historialAlumno.Empleado += new HistorialAlumno.HistorialEmpleadoDelegate(HistorialEmpleado);
+            ContainerComponents.Controls.Clear();
+            ContainerComponents.Controls.Add(historialAlumno);
+            BtnBack.Visible = true;
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color3);
+            HistorialEmpleado();
+        }
+
         private void MenuAdmin_Move(object sender, EventArgs e)
         {
             this.Location = new Point(277,44);
         }
 
-     
 
-
-
-
-
-
-
-
-
-        private void BtnFichas_MouseHover(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void PanelForm_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnInventario_MouseHover(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void BtnAjustes_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnUser_MouseHover(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void PanelForm_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void fichasEntrada1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void MenuContainer_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void TitleBar_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void sPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void BtnCalcular_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ContainerBtn_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void BtnCamaron_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnPescado_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnOtros_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
     }
 }

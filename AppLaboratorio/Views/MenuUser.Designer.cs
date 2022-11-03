@@ -34,6 +34,8 @@ namespace AppLaboratorio.Views
             this.BtnPrestamos = new FontAwesome.Sharp.IconButton();
             this.BtnUser = new FontAwesome.Sharp.IconButton();
             this.BtnFichas = new FontAwesome.Sharp.IconButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.ContainerTileBar = new AppLaboratorio.UserControlls.SPanel();
             this.RelogContainer = new AppLaboratorio.UserControlls.Relog();
             this.CalendarioContainer = new AppLaboratorio.UserControlls.Calendario();
@@ -41,16 +43,16 @@ namespace AppLaboratorio.Views
             this.BtnBack = new FontAwesome.Sharp.IconButton();
             this.PanelForm = new AppLaboratorio.UserControlls.SPanel();
             this.ContainerComponents = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MenuContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.ContainerTileBar.SuspendLayout();
             this.PanelForm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuContainer
             // 
             this.MenuContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.MenuContainer.Controls.Add(this.iconButton1);
             this.MenuContainer.Controls.Add(this.BtnPrestamos);
             this.MenuContainer.Controls.Add(this.BtnUser);
             this.MenuContainer.Controls.Add(this.BtnFichas);
@@ -59,7 +61,6 @@ namespace AppLaboratorio.Views
             this.MenuContainer.Name = "MenuContainer";
             this.MenuContainer.Size = new System.Drawing.Size(154, 433);
             this.MenuContainer.TabIndex = 13;
-            this.MenuContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuContainer_Paint);
             // 
             // BtnPrestamos
             // 
@@ -71,7 +72,7 @@ namespace AppLaboratorio.Views
             this.BtnPrestamos.IconChar = FontAwesome.Sharp.IconChar.FileImport;
             this.BtnPrestamos.IconColor = System.Drawing.Color.White;
             this.BtnPrestamos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnPrestamos.Location = new System.Drawing.Point(2, 73);
+            this.BtnPrestamos.Location = new System.Drawing.Point(0, 104);
             this.BtnPrestamos.Margin = new System.Windows.Forms.Padding(0);
             this.BtnPrestamos.Name = "BtnPrestamos";
             this.BtnPrestamos.Size = new System.Drawing.Size(151, 64);
@@ -89,19 +90,18 @@ namespace AppLaboratorio.Views
             this.BtnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.BtnUser.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnUser.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.BtnUser.IconChar = FontAwesome.Sharp.IconChar.Hippo;
             this.BtnUser.IconColor = System.Drawing.Color.White;
             this.BtnUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnUser.Location = new System.Drawing.Point(3, 330);
             this.BtnUser.Name = "BtnUser";
             this.BtnUser.Size = new System.Drawing.Size(153, 64);
             this.BtnUser.TabIndex = 9;
-            this.BtnUser.Text = "Sesión";
+            this.BtnUser.Text = "Cerrar sesión";
             this.BtnUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnUser.UseVisualStyleBackColor = false;
             this.BtnUser.Click += new System.EventHandler(this.BtnUser_Click);
-            this.BtnUser.MouseHover += new System.EventHandler(this.BtnUser_MouseHover);
             // 
             // BtnFichas
             // 
@@ -113,7 +113,7 @@ namespace AppLaboratorio.Views
             this.BtnFichas.IconChar = FontAwesome.Sharp.IconChar.BoxOpen;
             this.BtnFichas.IconColor = System.Drawing.Color.White;
             this.BtnFichas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnFichas.Location = new System.Drawing.Point(2, 3);
+            this.BtnFichas.Location = new System.Drawing.Point(2, 25);
             this.BtnFichas.Margin = new System.Windows.Forms.Padding(0);
             this.BtnFichas.Name = "BtnFichas";
             this.BtnFichas.Size = new System.Drawing.Size(151, 64);
@@ -123,7 +123,37 @@ namespace AppLaboratorio.Views
             this.BtnFichas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnFichas.UseVisualStyleBackColor = false;
             this.BtnFichas.Click += new System.EventHandler(this.BtnFichas_Click);
-            this.BtnFichas.MouseHover += new System.EventHandler(this.BtnFichas_MouseHover);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AppLaboratorio.Properties.Resources.tcnm_blanco;
+            this.pictureBox1.Location = new System.Drawing.Point(16, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(135, 135);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 45;
+            this.pictureBox1.TabStop = false;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.iconButton1.ForeColor = System.Drawing.SystemColors.Control;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.FileClipboard;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.Location = new System.Drawing.Point(0, 186);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(0);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(151, 64);
+            this.iconButton1.TabIndex = 14;
+            this.iconButton1.Text = "Bitacora";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // ContainerTileBar
             // 
@@ -150,7 +180,7 @@ namespace AppLaboratorio.Views
             // CalendarioContainer
             // 
             this.CalendarioContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.CalendarioContainer.Fecha = "31-10-2022";
+            this.CalendarioContainer.Fecha = "02-11-2022";
             this.CalendarioContainer.Location = new System.Drawing.Point(732, 24);
             this.CalendarioContainer.Name = "CalendarioContainer";
             this.CalendarioContainer.Size = new System.Drawing.Size(131, 31);
@@ -191,7 +221,6 @@ namespace AppLaboratorio.Views
             this.PanelForm.Padding = new System.Windows.Forms.Padding(160, 15, 160, 0);
             this.PanelForm.Size = new System.Drawing.Size(876, 532);
             this.PanelForm.TabIndex = 14;
-            this.PanelForm.Paint += new System.Windows.Forms.PaintEventHandler(this.sPanel1_Paint);
             // 
             // ContainerComponents
             // 
@@ -199,16 +228,6 @@ namespace AppLaboratorio.Views
             this.ContainerComponents.Name = "ContainerComponents";
             this.ContainerComponents.Size = new System.Drawing.Size(876, 500);
             this.ContainerComponents.TabIndex = 11;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::AppLaboratorio.Properties.Resources.tcnm_blanco;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(135, 135);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 45;
-            this.pictureBox1.TabStop = false;
             // 
             // MenuUser
             // 
@@ -224,13 +243,13 @@ namespace AppLaboratorio.Views
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sea Manager";
+            this.Text = "Lab control";
             this.Load += new System.EventHandler(this.MenuAdmin_Load);
             this.Move += new System.EventHandler(this.MenuAdmin_Move);
             this.MenuContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ContainerTileBar.ResumeLayout(false);
             this.PanelForm.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -249,5 +268,6 @@ namespace AppLaboratorio.Views
         private UserControlls.BarraUsuario TitleUsuario;
         private FontAwesome.Sharp.IconButton BtnPrestamos;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

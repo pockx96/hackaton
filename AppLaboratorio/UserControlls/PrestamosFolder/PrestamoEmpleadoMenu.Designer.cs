@@ -1,6 +1,6 @@
 ﻿namespace AppLaboratorio.UserControlls.PrestamosFolder
 {
-    partial class PrestamoEmpleado
+    partial class PrestamoEmpleadoMenu
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.ListaEntrada = new System.Windows.Forms.DataGridView();
-            this.NumeroControl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.DatagridEmpleados = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Herramiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Herramienta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroControl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.BtnEliminar = new System.Windows.Forms.Label();
@@ -46,88 +46,90 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.ListaEntrada)).BeginInit();
+            this.ContainerOptions = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.DatagridEmpleados)).BeginInit();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.ContainerOptions.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ListaEntrada
+            // DatagridEmpleados
             // 
-            this.ListaEntrada.AllowUserToAddRows = false;
-            this.ListaEntrada.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(122)))), ((int)(((byte)(242)))));
-            this.ListaEntrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ListaEntrada.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.ListaEntrada.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(13)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ListaEntrada.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.ListaEntrada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListaEntrada.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NumeroControl,
+            this.DatagridEmpleados.AllowUserToAddRows = false;
+            this.DatagridEmpleados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(122)))), ((int)(((byte)(242)))));
+            this.DatagridEmpleados.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DatagridEmpleados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DatagridEmpleados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(13)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DatagridEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DatagridEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DatagridEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
-            this.Herramiento,
+            this.Herramienta,
+            this.NumeroControl,
             this.Cantidad});
-            this.ListaEntrada.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ListaEntrada.DefaultCellStyle = dataGridViewCellStyle10;
-            this.ListaEntrada.EnableHeadersVisualStyles = false;
-            this.ListaEntrada.Location = new System.Drawing.Point(40, 164);
-            this.ListaEntrada.Name = "ListaEntrada";
-            this.ListaEntrada.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ListaEntrada.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.ListaEntrada.RowHeadersVisible = false;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(122)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(82)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            this.ListaEntrada.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.ListaEntrada.Size = new System.Drawing.Size(403, 209);
-            this.ListaEntrada.TabIndex = 45;
-            // 
-            // NumeroControl
-            // 
-            this.NumeroControl.HeaderText = "Numero Control";
-            this.NumeroControl.Name = "NumeroControl";
+            this.DatagridEmpleados.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DatagridEmpleados.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DatagridEmpleados.EnableHeadersVisualStyles = false;
+            this.DatagridEmpleados.Location = new System.Drawing.Point(40, 164);
+            this.DatagridEmpleados.Name = "DatagridEmpleados";
+            this.DatagridEmpleados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DatagridEmpleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DatagridEmpleados.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(122)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(82)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.DatagridEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.DatagridEmpleados.RowTemplate.Height = 35;
+            this.DatagridEmpleados.Size = new System.Drawing.Size(403, 289);
+            this.DatagridEmpleados.TabIndex = 45;
+            this.DatagridEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatagridEmpleados_CellContentClick);
             // 
             // Nombre
             // 
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             // 
-            // Herramiento
+            // Herramienta
             // 
-            this.Herramiento.HeaderText = "Herramiento";
-            this.Herramiento.Name = "Herramiento";
+            this.Herramienta.HeaderText = "Herramienta";
+            this.Herramienta.Name = "Herramienta";
+            // 
+            // NumeroControl
+            // 
+            this.NumeroControl.HeaderText = "Fecha de salida";
+            this.NumeroControl.Name = "NumeroControl";
             // 
             // Cantidad
             // 
-            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.HeaderText = "Fecha de regreso";
             this.Cantidad.Name = "Cantidad";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(84, 0);
+            this.panel1.Location = new System.Drawing.Point(84, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(3, 22);
             this.panel1.TabIndex = 42;
@@ -136,26 +138,26 @@
             // 
             this.BtnEliminar.AutoSize = true;
             this.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEliminar.ForeColor = System.Drawing.Color.White;
-            this.BtnEliminar.Location = new System.Drawing.Point(3, 0);
+            this.BtnEliminar.Location = new System.Drawing.Point(3, 5);
             this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(78, 24);
+            this.BtnEliminar.Size = new System.Drawing.Size(75, 20);
             this.BtnEliminar.TabIndex = 41;
-            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.Text = "Devolver";
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnInformacion
             // 
             this.BtnInformacion.AutoSize = true;
             this.BtnInformacion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnInformacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInformacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnInformacion.ForeColor = System.Drawing.Color.White;
-            this.BtnInformacion.Location = new System.Drawing.Point(87, 0);
+            this.BtnInformacion.Location = new System.Drawing.Point(87, 5);
             this.BtnInformacion.Name = "BtnInformacion";
-            this.BtnInformacion.Size = new System.Drawing.Size(40, 24);
+            this.BtnInformacion.Size = new System.Drawing.Size(96, 20);
             this.BtnInformacion.TabIndex = 43;
-            this.BtnInformacion.Text = "Info";
+            this.BtnInformacion.Text = "Información";
             this.BtnInformacion.Click += new System.EventHandler(this.BtnInformacion_Click);
             // 
             // BtnCrear
@@ -234,34 +236,34 @@
             this.panel3.Size = new System.Drawing.Size(202, 53);
             this.panel3.TabIndex = 47;
             // 
-            // panel4
+            // ContainerOptions
             // 
-            this.panel4.Controls.Add(this.BtnEliminar);
-            this.panel4.Controls.Add(this.BtnInformacion);
-            this.panel4.Controls.Add(this.panel1);
-            this.panel4.Location = new System.Drawing.Point(449, 195);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(140, 34);
-            this.panel4.TabIndex = 48;
+            this.ContainerOptions.Controls.Add(this.BtnEliminar);
+            this.ContainerOptions.Controls.Add(this.BtnInformacion);
+            this.ContainerOptions.Controls.Add(this.panel1);
+            this.ContainerOptions.Location = new System.Drawing.Point(449, 198);
+            this.ContainerOptions.Name = "ContainerOptions";
+            this.ContainerOptions.Size = new System.Drawing.Size(199, 30);
+            this.ContainerOptions.TabIndex = 48;
             // 
-            // PrestamoEmpleado
+            // PrestamoEmpleadoMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.ContainerOptions);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.ListaEntrada);
+            this.Controls.Add(this.DatagridEmpleados);
             this.Controls.Add(this.BtnCrear);
             this.Controls.Add(this.TitleBar);
-            this.Name = "PrestamoEmpleado";
+            this.Name = "PrestamoEmpleadoMenu";
             this.Size = new System.Drawing.Size(876, 500);
             this.Load += new System.EventHandler(this.PrestamoEmpleado_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ListaEntrada)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DatagridEmpleados)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.ContainerOptions.ResumeLayout(false);
+            this.ContainerOptions.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,20 +271,20 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView ListaEntrada;
+        private System.Windows.Forms.DataGridView DatagridEmpleados;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label BtnEliminar;
         private System.Windows.Forms.Label BtnInformacion;
         private System.Windows.Forms.Label BtnCrear;
         private FontAwesome.Sharp.IconButton TitleBar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroControl;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Herramiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel ContainerOptions;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Herramienta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroControl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
     }
 }

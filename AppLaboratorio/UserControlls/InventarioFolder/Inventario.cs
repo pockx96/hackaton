@@ -28,6 +28,7 @@ namespace AppLaboratorio.UserControlls.InventarioFolder
         private void ListaFolios_Load(object sender, EventArgs e)
         {
             LoadData(Laboratorio);
+            DatagridHerramienta.CurrentRow.Selected = true;
         }
 
         public string Laboratorio { get; set; }

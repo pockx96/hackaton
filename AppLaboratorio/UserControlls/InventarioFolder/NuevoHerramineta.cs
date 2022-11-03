@@ -17,14 +17,16 @@ namespace AppLaboratorio.UserControlls.InventarioFolder
 {
     public partial class NuevaHerramienta : UserControl
     {
-        public NuevaHerramienta()
+        public NuevaHerramienta(string laboratorio)
         {
             InitializeComponent();
+            Laboratorio=laboratorio;
 
 
         }
 
         Herramienta herramienta = new Herramienta();
+        string Laboratorio { get; set; }
 
         private void NuevoUsuario_Load_1(object sender, EventArgs e)
         {
@@ -61,6 +63,7 @@ namespace AppLaboratorio.UserControlls.InventarioFolder
                     herramienta.marca = TxtBoxArriba.Texts;
                     herramienta.modelo = TxtBoxMedio.Texts;
                     herramienta.numero_serie = TxtBoxAbajo.Texts;
+                    herramienta.laboratorio = Laboratorio;
                     GuardarHerramienta();
                     break;
             }

@@ -53,6 +53,44 @@ namespace AppLaboratorio.Controllers
 
             }
         }
+
+        public List<Herramienta> GetByProducto(string WordSearch)
+
+        {
+            List<Herramienta> inventarios = new List<Herramienta>();
+            string query = "select * from herramientas where herramienta like '%" + WordSearch + "%'";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                MySqlCommand command = new MySqlCommand(query, connection);
+                try
+                {
+                    connection.Open();
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Herramienta inv = new Herramienta();
+                        inv.IdHerramienta = reader.GetInt32(0);
+                        inv.herramienta = reader.GetString(1);
+                        inv.cantidad = reader.GetString(5);
+                        inventarios.Add(inv);
+
+                    }
+                    reader.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("error de la base de datos : " + ex);
+
+                }
+
+                return inventarios;
+
+            }
+
+        }
         public List<Herramienta> GetByLaboratorio(string laboratorio)
         {
             List<Herramienta> ListHerramienta = new List<Herramienta>();
@@ -149,6 +187,39 @@ namespace AppLaboratorio.Controllers
             string descripcion = herramienta.descripcion;
 
             string query = $"insert into herramientas(IdHerramienta, herramienta, marca, modelo,numero_serie,cantidad,laboratorio,descripcion) values('{IdHerramienta}','{nombre}','{marca}','{modelo}','{numero_serie}','{cantidad}','{laboratorio}','{descripcion}')";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                MySqlCommand command = new MySqlCommand(query, connection);
+
+
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("error de la base de datos : " + ex);
+
+                }
+            }
+        }
+
+        public void Update(Herramienta herramienta)
+        {
+            int IdHerramienta = herramienta.IdHerramienta;
+            string nombre = herramienta.herramienta;
+            string marca = herramienta.marca;
+            string modelo = herramienta.modelo;
+            string numero_serie = herramienta.numero_serie;
+            string cantidad = herramienta.cantidad;
+            string laboratorio = herramienta.laboratorio;
+            string descripcion = herramienta.descripcion;
+
+            string query = $"update herramientas set cantidad = '{cantidad}' where IdHerramienta = '{IdHerramienta}'";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {

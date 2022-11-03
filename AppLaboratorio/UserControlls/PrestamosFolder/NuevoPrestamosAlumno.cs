@@ -10,13 +10,12 @@ using System.Windows.Forms;
 using AppLaboratorio.Controllers;
 using AppLaboratorio.Models;
 using CustomMessageBox;
-using System.Linq;
 
 namespace AppLaboratorio.UserControlls.PrestamosFolder
 {
-    public partial class NuevoPrestamoEmpleado : UserControl
+    public partial class NuevoPrestamosAlumno : UserControl
     {
-        public NuevoPrestamoEmpleado(string laboratorio)
+        public NuevoPrestamosAlumno(string laboratorio)
         {
             InitializeComponent();
             Laboratorio = laboratorio;
@@ -27,19 +26,19 @@ namespace AppLaboratorio.UserControlls.PrestamosFolder
             PrimeraPagina();
         }
 
-        public string Laboratorio { get; set; }
+
         string BtnState { get; set; }
-        PrestamosEmpleados PrestamoEmpleado = new PrestamosEmpleados();
+        PrestamosAlumno PrestamoAlumno = new PrestamosAlumno();
         public delegate void BackDelegate();
         public event BackDelegate Back;
-
+        public string Laboratorio { get; set; }
 
         private void Clear()
         {
-            TxtBox1.Text = "";
-            TxtBox2.Text = "";
+            TxtBoxArriba.Text = "";
+            TxtBoxMedio.Text = "";
             TxtSalida.Text = "";
-            TxtBox3.Texts = "";
+            TxtBoxAbajo.Texts = "";
             TxtCantidad.Value = 0;
         }
 
@@ -51,18 +50,17 @@ namespace AppLaboratorio.UserControlls.PrestamosFolder
             switch (BtnState)
             {
                 case "1":
-                    PrestamoEmpleado.numero_de_control = TxtBox1.Texts;
-                    PrestamoEmpleado.nombre = TxtBox2.Texts;
-                    PrestamoEmpleado.celular = TxtBox3.Texts;
-                    PrestamoEmpleado.necesidad = TxtBox4.Texts;
+                    PrestamoAlumno.matricula = TxtBoxArriba.Texts;
+                    PrestamoAlumno.nombre = TxtBoxMedio.Texts;
+                    PrestamoAlumno.materia = TxtBoxAbajo.Texts;
                     SegundaPagina();
                     break;
                 case "2":
-                    PrestamoEmpleado.herramienta= TxtBox1.Texts;
-                    PrestamoEmpleado.cantidad = TxtCantidad.Value.ToString();
-                    PrestamoEmpleado.fecha_regreso = TxtSalida.Text;
-                    PrestamoEmpleado.fecha_salida = DateToday;
-                    PrestamoEmpleado.Laboratorio = Laboratorio;
+                    PrestamoAlumno.Herramienta= TxtBoxArriba.Texts;
+                    PrestamoAlumno.cantidad = TxtCantidad.Value.ToString();
+                    PrestamoAlumno.fecha_regreso = TxtSalida.Text;
+                    PrestamoAlumno.fecha_salida = DateToday;
+                    PrestamoAlumno.Laboratprio = Laboratorio;
 
                     GuardarHerramienta();
                     break;
@@ -77,16 +75,14 @@ namespace AppLaboratorio.UserControlls.PrestamosFolder
             Icon2.ForeColor = Color.Black;
             BtnState = "1";
             BtnVolver.Enabled = false;
-            Lbl1.Text = "No. Empleado:";
-            TxtBox1.PlaceholderText = "Numero de empleado del docente";
-            Lbl2.Text = "Nombre:";
-            TxtBox2.Visible = true;
-            TxtBox2.PlaceholderText = "Nombre del docente";
-            Lbl3.Text = "Celular:";
-            TxtBox3.Visible = true;
-            TxtBox3.PlaceholderText = "638-123-45-67";
-            Lbl4.Text = "Motivo:";
-            TxtBox4.PlaceholderText = "Motivo del prestamo";
+            LblArriba.Text = "Matricula:";
+            TxtBoxArriba.PlaceholderText = "Matricula del alumno";
+            LblMedio.Text = "Nombre";
+            TxtBoxMedio.Visible = true;
+            TxtBoxMedio.PlaceholderText = "Nombre completo del alumno";
+            LblAbajo.Text = "Materia";
+            TxtBoxAbajo.Visible = true;
+            TxtBoxAbajo.PlaceholderText = "Materia para la que solicita";
             TxtCantidad.Visible = false;
             TxtSalida.Visible = false;
             BtnGuardar.Text = "Siguiente";
@@ -101,31 +97,29 @@ namespace AppLaboratorio.UserControlls.PrestamosFolder
             Icon2.BackColor = Color.FromArgb(82, 122, 242);
             Icon2.ForeColor = Color.White;
             BtnState = "2";
-            Lbl1.Text = "Herramienta:";
-            TxtBox1.PlaceholderText = "Herramienta solicitada";
-            Lbl2.Text = "Cantidad:";
-            TxtBox2.Visible = false;
+            LblArriba.Text = "Herramienta:";
+            TxtBoxArriba.PlaceholderText = "Herramienta solicitada";
+            LblMedio.Text = "Cantidad:";
+            TxtBoxMedio.Visible = false;
             TxtCantidad.Visible = true;
-            Lbl3.Text = "Fecha de Regreso";
+            LblAbajo.Text = "Fecha de Regreso";
             TxtSalida.Visible= true;
-            TxtBox3.Visible = false;
-            Lbl4.Visible = false;
-            TxtBox4.Visible = false;
+            TxtBoxAbajo.Visible = false;
             BtnGuardar.Text = "Guardar";
 
         }
         private void GuardarHerramienta()
         {
-            PrestamoEmpleadoController prestamoEmpleadoController = new PrestamoEmpleadoController();
-            prestamoEmpleadoController.post(PrestamoEmpleado);
+            PrestamosAlumnoController prestamosAlumnoController = new PrestamosAlumnoController();
+            prestamosAlumnoController.post(PrestamoAlumno);
 
-            string NuevaCantidad = prestamoEmpleadoController.RestaCantidad(PrestamoEmpleado.cantidad,PrestamoEmpleado.herramienta);
+            string NuevaCantidad = prestamosAlumnoController.RestaCantidad(PrestamoAlumno.cantidad, PrestamoAlumno.Herramienta);
 
             HerramientaController herramientaController = new HerramientaController();
-            List<Herramienta> ListHerramienta= herramientaController.Get();
+            List<Herramienta> ListHerramienta = herramientaController.Get();
 
             var HerramientaUpdate = from l in ListHerramienta
-                                    where l.herramienta == PrestamoEmpleado.herramienta
+                                    where l.herramienta == PrestamoAlumno.Herramienta
                                     select l;
             foreach (Herramienta herramienta in HerramientaUpdate)
             {
@@ -133,7 +127,7 @@ namespace AppLaboratorio.UserControlls.PrestamosFolder
                 herramientaController.Update(herramienta);
             }
 
-                            
+
             DialogResult result = RJMessageBox.Show("Prestamo Realizado" + " !.", "Exito!");
             Back();
         }
@@ -141,26 +135,6 @@ namespace AppLaboratorio.UserControlls.PrestamosFolder
         private void BtnVolver_Click(object sender, EventArgs e)
         {
             PrimeraPagina();
-        }
-
-        private void Icon1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Icon2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 

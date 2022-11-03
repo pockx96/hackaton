@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.11.3.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.11.3\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
     <Reference Include="FontAwesome.Sharp, Version=6.1.1.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.6.1.1\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
@@ -41,6 +44,9 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="SpreadsheetLight, Version=3.5.0.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpreadsheetLight.3.5.0\lib\netstandard2.0\SpreadsheetLight.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -48,6 +54,17 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.5.0.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.7.0\lib\net46\System.IO.Packaging.dll</HintPath>
     </Reference>
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
@@ -101,6 +118,18 @@
     <Compile Include="UserControlls\FormMessageBox.Designer.cs">
       <DependentUpon>FormMessageBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlls\HistorialFolder\HistorialAlumno.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlls\HistorialFolder\HistorialAlumno.designer.cs">
+      <DependentUpon>HistorialAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlls\HistorialFolder\HistorialEmpleado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlls\HistorialFolder\HistorialEmpleado.designer.cs">
+      <DependentUpon>HistorialEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlls\InventarioFolder\Inventario.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -119,11 +148,17 @@
     <Compile Include="UserControlls\InventarioFolder\NuevoHerramineta.Designer.cs">
       <DependentUpon>NuevoHerramineta.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlls\PrestamosFolder\InfoPrestamoEstudiante.cs">
+    <Compile Include="UserControlls\PrestamosFolder\InfoPrestamoAlumno.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlls\PrestamosFolder\InfoPrestamoEstudiante.Designer.cs">
-      <DependentUpon>InfoPrestamoEstudiante.cs</DependentUpon>
+    <Compile Include="UserControlls\PrestamosFolder\InfoPrestamoAlumno.Designer.cs">
+      <DependentUpon>InfoPrestamoAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlls\PrestamosFolder\InfoPrestamoEmpleado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlls\PrestamosFolder\InfoPrestamoEmpleado.Designer.cs">
+      <DependentUpon>InfoPrestamoEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlls\PrestamosFolder\NuevoPrestamoEmpleado.cs">
       <SubType>UserControl</SubType>
@@ -131,23 +166,23 @@
     <Compile Include="UserControlls\PrestamosFolder\NuevoPrestamoEmpleado.Designer.cs">
       <DependentUpon>NuevoPrestamoEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlls\PrestamosFolder\NuevoPrestamosEstudiantes.cs">
+    <Compile Include="UserControlls\PrestamosFolder\NuevoPrestamosAlumno.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlls\PrestamosFolder\NuevoPrestamosEstudiantes.Designer.cs">
-      <DependentUpon>NuevoPrestamosEstudiantes.cs</DependentUpon>
+    <Compile Include="UserControlls\PrestamosFolder\NuevoPrestamosAlumno.Designer.cs">
+      <DependentUpon>NuevoPrestamosAlumno.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlls\PrestamosFolder\PrestamoEmpleado.cs">
+    <Compile Include="UserControlls\PrestamosFolder\PrestamoEmpleadoMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlls\PrestamosFolder\PrestamoEmpleado.Designer.cs">
-      <DependentUpon>PrestamoEmpleado.cs</DependentUpon>
+    <Compile Include="UserControlls\PrestamosFolder\PrestamoEmpleadoMenu.Designer.cs">
+      <DependentUpon>PrestamoEmpleadoMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlls\PrestamosFolder\PrestamoEstudiante.cs">
+    <Compile Include="UserControlls\PrestamosFolder\PrestamoAlumnoMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlls\PrestamosFolder\PrestamoEstudiante.Designer.cs">
-      <DependentUpon>PrestamoEstudiante.cs</DependentUpon>
+    <Compile Include="UserControlls\PrestamosFolder\PrestamoAlumnoMenu.Designer.cs">
+      <DependentUpon>PrestamoAlumnoMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlls\Relog.cs">
       <SubType>UserControl</SubType>
@@ -224,6 +259,12 @@
     <EmbeddedResource Include="UserControlls\FormMessageBox.resx">
       <DependentUpon>FormMessageBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlls\HistorialFolder\HistorialAlumno.resx">
+      <DependentUpon>HistorialAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlls\HistorialFolder\HistorialEmpleado.resx">
+      <DependentUpon>HistorialEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlls\InventarioFolder\Inventario.resx">
       <DependentUpon>Inventario.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,20 +274,23 @@
     <EmbeddedResource Include="UserControlls\InventarioFolder\NuevoHerramineta.resx">
       <DependentUpon>NuevoHerramineta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlls\PrestamosFolder\InfoPrestamoEstudiante.resx">
-      <DependentUpon>InfoPrestamoEstudiante.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlls\PrestamosFolder\InfoPrestamoAlumno.resx">
+      <DependentUpon>InfoPrestamoAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlls\PrestamosFolder\InfoPrestamoEmpleado.resx">
+      <DependentUpon>InfoPrestamoEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlls\PrestamosFolder\NuevoPrestamoEmpleado.resx">
       <DependentUpon>NuevoPrestamoEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlls\PrestamosFolder\NuevoPrestamosEstudiantes.resx">
-      <DependentUpon>NuevoPrestamosEstudiantes.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlls\PrestamosFolder\NuevoPrestamosAlumno.resx">
+      <DependentUpon>NuevoPrestamosAlumno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlls\PrestamosFolder\PrestamoEmpleado.resx">
-      <DependentUpon>PrestamoEmpleado.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlls\PrestamosFolder\PrestamoEmpleadoMenu.resx">
+      <DependentUpon>PrestamoEmpleadoMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlls\PrestamosFolder\PrestamoEstudiante.resx">
-      <DependentUpon>PrestamoEstudiante.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlls\PrestamosFolder\PrestamoAlumnoMenu.resx">
+      <DependentUpon>PrestamoAlumnoMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlls\Relog.resx">
       <DependentUpon>Relog.cs</DependentUpon>

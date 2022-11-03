@@ -1,6 +1,6 @@
 ﻿namespace AppLaboratorio.UserControlls.PrestamosFolder
 {
-    partial class PrestamoEstudiante
+    partial class PrestamoAlumnoMenu
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TitleBar = new FontAwesome.Sharp.IconButton();
             this.BtnInformacion = new System.Windows.Forms.Label();
             this.BtnCrear = new System.Windows.Forms.Label();
-            this.ListaEntrada = new System.Windows.Forms.DataGridView();
+            this.DatagridAlumno = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Herramienta = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,12 +44,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.ContainerOptions = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.ListaEntrada)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DatagridAlumno)).BeginInit();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.ContainerOptions.SuspendLayout();
             this.SuspendLayout();
             // 
             // TitleBar
@@ -76,13 +76,13 @@
             // 
             this.BtnInformacion.AutoSize = true;
             this.BtnInformacion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnInformacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInformacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnInformacion.ForeColor = System.Drawing.Color.White;
-            this.BtnInformacion.Location = new System.Drawing.Point(93, 0);
+            this.BtnInformacion.Location = new System.Drawing.Point(92, 1);
             this.BtnInformacion.Name = "BtnInformacion";
-            this.BtnInformacion.Size = new System.Drawing.Size(40, 24);
+            this.BtnInformacion.Size = new System.Drawing.Size(96, 20);
             this.BtnInformacion.TabIndex = 37;
-            this.BtnInformacion.Text = "Info";
+            this.BtnInformacion.Text = "Información";
             this.BtnInformacion.Click += new System.EventHandler(this.BtnInformacion_Click);
             // 
             // BtnCrear
@@ -98,57 +98,62 @@
             this.BtnCrear.Text = "Nuevo prestamo";
             this.BtnCrear.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // ListaEntrada
+            // DatagridAlumno
             // 
-            this.ListaEntrada.AllowUserToAddRows = false;
-            this.ListaEntrada.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(122)))), ((int)(((byte)(242)))));
-            this.ListaEntrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ListaEntrada.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.ListaEntrada.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(13)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ListaEntrada.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
-            this.ListaEntrada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListaEntrada.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DatagridAlumno.AllowUserToAddRows = false;
+            this.DatagridAlumno.AllowUserToDeleteRows = false;
+            this.DatagridAlumno.AllowUserToResizeColumns = false;
+            this.DatagridAlumno.AllowUserToResizeRows = false;
+            this.DatagridAlumno.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(122)))), ((int)(((byte)(242)))));
+            this.DatagridAlumno.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DatagridAlumno.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DatagridAlumno.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(13)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DatagridAlumno.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DatagridAlumno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DatagridAlumno.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Herramienta,
             this.Cantidad});
-            this.ListaEntrada.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ListaEntrada.DefaultCellStyle = dataGridViewCellStyle18;
-            this.ListaEntrada.EnableHeadersVisualStyles = false;
-            this.ListaEntrada.Location = new System.Drawing.Point(40, 164);
-            this.ListaEntrada.Name = "ListaEntrada";
-            this.ListaEntrada.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ListaEntrada.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
-            this.ListaEntrada.RowHeadersVisible = false;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(122)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(82)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
-            this.ListaEntrada.RowsDefaultCellStyle = dataGridViewCellStyle20;
-            this.ListaEntrada.Size = new System.Drawing.Size(433, 209);
-            this.ListaEntrada.TabIndex = 39;
+            this.DatagridAlumno.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DatagridAlumno.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DatagridAlumno.EnableHeadersVisualStyles = false;
+            this.DatagridAlumno.Location = new System.Drawing.Point(40, 164);
+            this.DatagridAlumno.Name = "DatagridAlumno";
+            this.DatagridAlumno.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(135)))), ((int)(((byte)(5)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DatagridAlumno.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DatagridAlumno.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(122)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(82)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.DatagridAlumno.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.DatagridAlumno.RowTemplate.Height = 35;
+            this.DatagridAlumno.Size = new System.Drawing.Size(433, 293);
+            this.DatagridAlumno.TabIndex = 39;
+            this.DatagridAlumno.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatagridAlumno_CellContentClick);
             // 
             // Column1
             // 
@@ -214,54 +219,55 @@
             this.label1.Text = "Docentes";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // panel4
+            // ContainerOptions
             // 
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Controls.Add(this.BtnInformacion);
-            this.panel4.Location = new System.Drawing.Point(488, 180);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(140, 34);
-            this.panel4.TabIndex = 49;
+            this.ContainerOptions.Controls.Add(this.label3);
+            this.ContainerOptions.Controls.Add(this.panel5);
+            this.ContainerOptions.Controls.Add(this.BtnInformacion);
+            this.ContainerOptions.Location = new System.Drawing.Point(488, 181);
+            this.ContainerOptions.Name = "ContainerOptions";
+            this.ContainerOptions.Size = new System.Drawing.Size(194, 34);
+            this.ContainerOptions.TabIndex = 49;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Location = new System.Drawing.Point(3, 1);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 24);
+            this.label3.Size = new System.Drawing.Size(75, 20);
             this.label3.TabIndex = 41;
-            this.label3.Text = "Eliminar";
+            this.label3.Text = "Devolver";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(84, 0);
+            this.panel5.Location = new System.Drawing.Point(82, 2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(3, 22);
             this.panel5.TabIndex = 42;
             // 
-            // PrestamoEstudiante
+            // PrestamoAlumnoMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.ContainerOptions);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.ListaEntrada);
+            this.Controls.Add(this.DatagridAlumno);
             this.Controls.Add(this.BtnCrear);
             this.Controls.Add(this.TitleBar);
-            this.Name = "PrestamoEstudiante";
+            this.Name = "PrestamoAlumnoMenu";
             this.Size = new System.Drawing.Size(876, 500);
             this.Load += new System.EventHandler(this.ListaFolios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ListaEntrada)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DatagridAlumno)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.ContainerOptions.ResumeLayout(false);
+            this.ContainerOptions.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,7 +277,7 @@
         private FontAwesome.Sharp.IconButton TitleBar;
         private System.Windows.Forms.Label BtnInformacion;
         private System.Windows.Forms.Label BtnCrear;
-        private System.Windows.Forms.DataGridView ListaEntrada;
+        private System.Windows.Forms.DataGridView DatagridAlumno;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Herramienta;
@@ -280,7 +286,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel ContainerOptions;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel5;
     }

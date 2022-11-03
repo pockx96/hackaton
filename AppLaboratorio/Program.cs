@@ -33,9 +33,10 @@ namespace AppLaboratorio
             Usuarios usuario = userControl.Get("Pock");
 
 
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuUser(usuario));
+            Application.Run(new Login());
         }
 
 

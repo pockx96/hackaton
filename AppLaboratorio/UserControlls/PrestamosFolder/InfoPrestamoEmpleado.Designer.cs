@@ -1,6 +1,6 @@
 ﻿namespace AppLaboratorio.UserControlls.PrestamosFolder
 {
-    partial class InfoPrestamoEstudiante
+    partial class InfoPrestamoEmpleado
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -46,6 +46,9 @@
             this.Icon1 = new AppLaboratorio.UserControlls.BotonRedondo();
             this.BtnVolver = new AppLaboratorio.UserControlls.BotonRedondo();
             this.BtnGuardar = new AppLaboratorio.UserControlls.BotonRedondo();
+            this.Txt5 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Lbl5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +76,7 @@
             this.Lbl3.AutoSize = true;
             this.Lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl3.ForeColor = System.Drawing.SystemColors.Control;
-            this.Lbl3.Location = new System.Drawing.Point(31, 192);
+            this.Lbl3.Location = new System.Drawing.Point(31, 183);
             this.Lbl3.Name = "Lbl3";
             this.Lbl3.Size = new System.Drawing.Size(86, 20);
             this.Lbl3.TabIndex = 30;
@@ -84,7 +87,7 @@
             this.Lbl2.AutoSize = true;
             this.Lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl2.ForeColor = System.Drawing.SystemColors.Control;
-            this.Lbl2.Location = new System.Drawing.Point(31, 109);
+            this.Lbl2.Location = new System.Drawing.Point(31, 95);
             this.Lbl2.Name = "Lbl2";
             this.Lbl2.Size = new System.Drawing.Size(108, 20);
             this.Lbl2.TabIndex = 29;
@@ -92,6 +95,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.Txt5);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.Lbl5);
             this.groupBox1.Controls.Add(this.Txt4);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.Lbl4);
@@ -104,18 +110,19 @@
             this.groupBox1.Controls.Add(this.Lbl3);
             this.groupBox1.Controls.Add(this.Lbl2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(40, 48);
+            this.groupBox1.Location = new System.Drawing.Point(40, 34);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(330, 355);
+            this.groupBox1.Size = new System.Drawing.Size(330, 395);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // Txt4
             // 
             this.Txt4.AutoSize = true;
             this.Txt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt4.ForeColor = System.Drawing.SystemColors.Control;
-            this.Txt4.Location = new System.Drawing.Point(43, 311);
+            this.Txt4.Location = new System.Drawing.Point(43, 289);
             this.Txt4.Name = "Txt4";
             this.Txt4.Size = new System.Drawing.Size(93, 20);
             this.Txt4.TabIndex = 51;
@@ -125,7 +132,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(27, 247);
+            this.label8.Location = new System.Drawing.Point(27, 234);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(216, 20);
             this.label8.TabIndex = 50;
@@ -136,7 +143,7 @@
             this.Lbl4.AutoSize = true;
             this.Lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl4.ForeColor = System.Drawing.SystemColors.Control;
-            this.Lbl4.Location = new System.Drawing.Point(31, 280);
+            this.Lbl4.Location = new System.Drawing.Point(31, 260);
             this.Lbl4.Name = "Lbl4";
             this.Lbl4.Size = new System.Drawing.Size(71, 20);
             this.Lbl4.TabIndex = 49;
@@ -147,7 +154,7 @@
             this.Txt3.AutoSize = true;
             this.Txt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt3.ForeColor = System.Drawing.SystemColors.Control;
-            this.Txt3.Location = new System.Drawing.Point(43, 223);
+            this.Txt3.Location = new System.Drawing.Point(43, 213);
             this.Txt3.Name = "Txt3";
             this.Txt3.Size = new System.Drawing.Size(96, 20);
             this.Txt3.TabIndex = 48;
@@ -158,7 +165,7 @@
             this.Txt2.AutoSize = true;
             this.Txt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt2.ForeColor = System.Drawing.SystemColors.Control;
-            this.Txt2.Location = new System.Drawing.Point(43, 139);
+            this.Txt2.Location = new System.Drawing.Point(43, 131);
             this.Txt2.Name = "Txt2";
             this.Txt2.Size = new System.Drawing.Size(210, 20);
             this.Txt2.TabIndex = 47;
@@ -169,7 +176,7 @@
             this.Txt1.AutoSize = true;
             this.Txt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt1.ForeColor = System.Drawing.SystemColors.Control;
-            this.Txt1.Location = new System.Drawing.Point(43, 53);
+            this.Txt1.Location = new System.Drawing.Point(43, 46);
             this.Txt1.Name = "Txt1";
             this.Txt1.Size = new System.Drawing.Size(157, 20);
             this.Txt1.TabIndex = 46;
@@ -179,7 +186,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(27, 159);
+            this.label4.Location = new System.Drawing.Point(27, 151);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(216, 20);
             this.label4.TabIndex = 44;
@@ -189,7 +196,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(27, 73);
+            this.label1.Location = new System.Drawing.Point(27, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(216, 20);
             this.label1.TabIndex = 41;
@@ -200,7 +207,7 @@
             this.Lbl1.AutoSize = true;
             this.Lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl1.ForeColor = System.Drawing.SystemColors.Control;
-            this.Lbl1.Location = new System.Drawing.Point(27, 22);
+            this.Lbl1.Location = new System.Drawing.Point(27, 18);
             this.Lbl1.Name = "Lbl1";
             this.Lbl1.Size = new System.Drawing.Size(113, 20);
             this.Lbl1.TabIndex = 40;
@@ -269,7 +276,7 @@
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnVolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(122)))), ((int)(((byte)(242)))));
-            this.BtnVolver.Location = new System.Drawing.Point(40, 440);
+            this.BtnVolver.Location = new System.Drawing.Point(40, 454);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(87, 40);
             this.BtnVolver.TabIndex = 34;
@@ -290,7 +297,7 @@
             this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnGuardar.ForeColor = System.Drawing.Color.White;
-            this.BtnGuardar.Location = new System.Drawing.Point(143, 440);
+            this.BtnGuardar.Location = new System.Drawing.Point(143, 454);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(102, 40);
             this.BtnGuardar.TabIndex = 23;
@@ -299,7 +306,39 @@
             this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.botonRedondo1_Click);
             // 
-            // InfoPrestamoEstudiante
+            // Txt5
+            // 
+            this.Txt5.AutoSize = true;
+            this.Txt5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt5.ForeColor = System.Drawing.SystemColors.Control;
+            this.Txt5.Location = new System.Drawing.Point(43, 367);
+            this.Txt5.Name = "Txt5";
+            this.Txt5.Size = new System.Drawing.Size(93, 20);
+            this.Txt5.TabIndex = 54;
+            this.Txt5.Text = "En almacen";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.Control;
+            this.label5.Location = new System.Drawing.Point(27, 311);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(216, 20);
+            this.label5.TabIndex = 53;
+            this.label5.Text = "_______________________";
+            // 
+            // Lbl5
+            // 
+            this.Lbl5.AutoSize = true;
+            this.Lbl5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl5.ForeColor = System.Drawing.SystemColors.Control;
+            this.Lbl5.Location = new System.Drawing.Point(31, 336);
+            this.Lbl5.Name = "Lbl5";
+            this.Lbl5.Size = new System.Drawing.Size(71, 20);
+            this.Lbl5.TabIndex = 52;
+            this.Lbl5.Text = "Estado:";
+            // 
+            // InfoPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -311,7 +350,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnAjustes);
             this.Controls.Add(this.BtnGuardar);
-            this.Name = "InfoPrestamoEstudiante";
+            this.Name = "InfoPrestamo";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(876, 500);
             this.Load += new System.EventHandler(this.NuevoUsuario_Load_1);
@@ -342,5 +381,8 @@
         private System.Windows.Forms.Label Txt3;
         private System.Windows.Forms.Label Txt2;
         private System.Windows.Forms.Label Txt1;
+        private System.Windows.Forms.Label Txt5;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label Lbl5;
     }
 }
