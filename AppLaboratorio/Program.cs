@@ -30,13 +30,13 @@ namespace AppLaboratorio
             //};
             //herramientaController.Post(herramienta);
             UsuarioController userControl = new UsuarioController();
-            Usuarios usuario = userControl.Get("Pock");
+            Usuarios usuario = userControl.Get("cris");
 
 
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new MenuUser(usuario));
         }
 
 

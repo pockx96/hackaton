@@ -287,7 +287,7 @@ namespace CustomMessageBox.Private
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Cancel();
+            this.Close();
         }
 
         private void FormMessageBox_Load(object sender, EventArgs e)

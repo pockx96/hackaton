@@ -11,6 +11,7 @@ using FontAwesome.Sharp;
 using AppLaboratorio.UserControlls;
 using AppLaboratorio.Models;
 using AppLaboratorio.Controllers;
+using CustomMessageBox;
 
 namespace AppLaboratorio.UserControlls.InventarioFolder
 {
@@ -28,7 +29,10 @@ namespace AppLaboratorio.UserControlls.InventarioFolder
         private void ListaFolios_Load(object sender, EventArgs e)
         {
             LoadData(Laboratorio);
-            DatagridHerramienta.CurrentRow.Selected = true;
+            if (DatagridHerramienta.RowCount>0)
+            {
+                DatagridHerramienta.Rows[0].Selected = true;
+            }
         }
 
         public string Laboratorio { get; set; }
@@ -39,6 +43,7 @@ namespace AppLaboratorio.UserControlls.InventarioFolder
         public delegate void InfoDelegate(Herramienta herramienta);
         public event InfoDelegate Info;
 
+        HerramientaController herramientaController = new HerramientaController();
 
         public void LoadData(string laboratorio)
         {
@@ -47,7 +52,7 @@ namespace AppLaboratorio.UserControlls.InventarioFolder
             int index;
             foreach (Herramienta element in ListHerramienta)
             {
-                index = DatagridHerramienta.RowCount - 1;
+                index = DatagridHerramienta.RowCount;
                 DatagridHerramienta.Rows.Insert(index,Convert.ToString(element.IdHerramienta),element.herramienta,element.cantidad);
             }
 
@@ -67,10 +72,42 @@ namespace AppLaboratorio.UserControlls.InventarioFolder
 
         private void DatagridFolios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Animations animations = new Animations();
-            Point Location = animations.BtnlocationDatagrid(DatagridHerramienta,318,Cursor.Position.Y,new Point(440, 158),12);
-            OptionsContainer.Location = Location;
             DatagridHerramienta.CurrentRow.Selected = true;
+            string idHerramienta = DatagridHerramienta.CurrentRow.Cells[0].Value.ToString();
+            if (DatagridHerramienta.Columns[e.ColumnIndex].Name == "infomacion")
+            {
+
+                Herramienta herramienta = herramientaController.Get(idHerramienta);
+
+
+                try
+                {
+                    Info(herramienta);  
+
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show("Evento no asignado" + error);
+                }
+
+
+
+
+            }
+
+            else if (DatagridHerramienta.Columns[e.ColumnIndex].Name == "borrar")
+            {
+                var result = RJMessageBox.Show("¿Desea Eliminar esta herramienta?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (result == DialogResult.OK)
+                {
+                    herramientaController.Delete(idHerramienta);
+                    DatagridHerramienta.Rows.Remove(DatagridHerramienta.CurrentRow);
+                }
+
+            }
+
+
         }
 
 

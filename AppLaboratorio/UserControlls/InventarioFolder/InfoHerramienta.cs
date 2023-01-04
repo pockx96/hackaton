@@ -27,7 +27,12 @@ namespace AppLaboratorio.UserControlls.InventarioFolder
 
         private void NuevoUsuario_Load_1(object sender, EventArgs e)
         {
+
             BtnState = "1";
+            Txt1.Text = Herramienta.herramienta;
+            Txt2.Text = Herramienta.descripcion;
+            Txt3.Text = Herramienta.cantidad;
+            Txt4.Text = Herramienta.laboratorio;
         }
 
         public delegate void BackDelegate();

@@ -89,10 +89,31 @@ namespace AppLaboratorio.UserControlls.PrestamosFolder
 
         private void DatagridAlumno_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Animations animations = new Animations();
-            Point Location = animations.BtnlocationDatagrid(DatagridAlumno, 356, Cursor.Position.Y, new Point(488, 181), 12);
-            ContainerOptions.Location = Location;
             DatagridAlumno.CurrentRow.Selected = true;
+
+            string id = DatagridAlumno.CurrentRow.Cells[0].Value.ToString();
+            if (DatagridAlumno.Columns[e.ColumnIndex].Name == "infomacion")
+            {
+
+                PrestamosAlumnoController prestamosController = new PrestamosAlumnoController();
+                PrestamosAlumno prestamosAlumno = prestamosController.Get(id);
+                if (informacion != null)
+                {
+                    informacion(prestamosAlumno);
+                }
+            }
+
+            else if (DatagridAlumno.Columns[e.ColumnIndex].Name == "borrar")
+            {
+                var result = RJMessageBox.Show("¿Desea Eliminar esta herramienta?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (result == DialogResult.OK)
+                {
+                    herramientaController.Delete(id);
+                    DatagridAlumno.Rows.Remove(DatagridAlumno.CurrentRow);
+                }
+
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)
