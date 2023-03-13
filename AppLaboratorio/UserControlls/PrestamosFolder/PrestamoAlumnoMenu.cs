@@ -35,7 +35,7 @@ namespace AppLaboratorio.UserControlls.PrestamosFolder
         public event info informacion;
         public delegate void EmpleadosDelegate();
         public event EmpleadosDelegate Empleados;
-
+        HerramientaController herramientaController = new HerramientaController();
         public void LoadData()
         {
 
@@ -135,7 +135,6 @@ namespace AppLaboratorio.UserControlls.PrestamosFolder
 
             string NuevaCantidad = prestamosController.SumaCantidad(prestamosAlumno.cantidad, prestamosAlumno.Herramienta);
 
-            HerramientaController herramientaController = new HerramientaController();
             List<Herramienta> ListHerramienta = herramientaController.Get();
 
             var HerramientaUpdate = from l in ListHerramienta

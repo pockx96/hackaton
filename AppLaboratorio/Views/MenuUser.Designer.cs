@@ -31,11 +31,11 @@ namespace AppLaboratorio.Views
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuUser));
             this.MenuContainer = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.BtnPrestamos = new FontAwesome.Sharp.IconButton();
             this.BtnUser = new FontAwesome.Sharp.IconButton();
             this.BtnFichas = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.ContainerTileBar = new AppLaboratorio.UserControlls.SPanel();
             this.RelogContainer = new AppLaboratorio.UserControlls.Relog();
             this.CalendarioContainer = new AppLaboratorio.UserControlls.Calendario();
@@ -61,6 +61,27 @@ namespace AppLaboratorio.Views
             this.MenuContainer.Name = "MenuContainer";
             this.MenuContainer.Size = new System.Drawing.Size(154, 433);
             this.MenuContainer.TabIndex = 13;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.iconButton1.ForeColor = System.Drawing.SystemColors.Control;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Paste;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.Location = new System.Drawing.Point(0, 186);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(0);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(151, 64);
+            this.iconButton1.TabIndex = 14;
+            this.iconButton1.Text = "Bitacora";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // BtnPrestamos
             // 
@@ -90,7 +111,7 @@ namespace AppLaboratorio.Views
             this.BtnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.BtnUser.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnUser.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
+            this.BtnUser.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
             this.BtnUser.IconColor = System.Drawing.Color.White;
             this.BtnUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnUser.Location = new System.Drawing.Point(3, 330);
@@ -134,27 +155,6 @@ namespace AppLaboratorio.Views
             this.pictureBox1.TabIndex = 45;
             this.pictureBox1.TabStop = false;
             // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.iconButton1.ForeColor = System.Drawing.SystemColors.Control;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.FileClipboard;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(0, 186);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(151, 64);
-            this.iconButton1.TabIndex = 14;
-            this.iconButton1.Text = "Bitacora";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
-            // 
             // ContainerTileBar
             // 
             this.ContainerTileBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
@@ -168,6 +168,7 @@ namespace AppLaboratorio.Views
             this.ContainerTileBar.Name = "ContainerTileBar";
             this.ContainerTileBar.Size = new System.Drawing.Size(876, 72);
             this.ContainerTileBar.TabIndex = 28;
+            this.ContainerTileBar.Paint += new System.Windows.Forms.PaintEventHandler(this.ContainerTileBar_Paint);
             // 
             // RelogContainer
             // 
@@ -180,7 +181,7 @@ namespace AppLaboratorio.Views
             // CalendarioContainer
             // 
             this.CalendarioContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.CalendarioContainer.Fecha = "02-11-2022";
+            this.CalendarioContainer.Fecha = "12-03-2023";
             this.CalendarioContainer.Location = new System.Drawing.Point(732, 24);
             this.CalendarioContainer.Name = "CalendarioContainer";
             this.CalendarioContainer.Size = new System.Drawing.Size(131, 31);

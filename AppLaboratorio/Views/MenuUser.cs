@@ -335,6 +335,9 @@ namespace AppLaboratorio.Views
             this.Location = new Point(277,44);
         }
 
+        private void ContainerTileBar_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }

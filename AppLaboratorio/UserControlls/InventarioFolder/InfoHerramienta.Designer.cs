@@ -32,6 +32,12 @@
             this.Lbl3 = new System.Windows.Forms.Label();
             this.Lbl2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Txt4 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Lbl4 = new System.Windows.Forms.Label();
+            this.Txt3 = new System.Windows.Forms.Label();
+            this.Txt2 = new System.Windows.Forms.Label();
+            this.Txt1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Lbl1 = new System.Windows.Forms.Label();
@@ -40,12 +46,6 @@
             this.Icon1 = new AppLaboratorio.UserControlls.BotonRedondo();
             this.BtnVolver = new AppLaboratorio.UserControlls.BotonRedondo();
             this.BtnGuardar = new AppLaboratorio.UserControlls.BotonRedondo();
-            this.Txt1 = new System.Windows.Forms.Label();
-            this.Txt2 = new System.Windows.Forms.Label();
-            this.Txt3 = new System.Windows.Forms.Label();
-            this.Txt4 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.Lbl4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,7 +109,71 @@
             this.groupBox1.Size = new System.Drawing.Size(330, 355);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
-
+            // 
+            // Txt4
+            // 
+            this.Txt4.AutoSize = true;
+            this.Txt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt4.ForeColor = System.Drawing.SystemColors.Control;
+            this.Txt4.Location = new System.Drawing.Point(43, 311);
+            this.Txt4.Name = "Txt4";
+            this.Txt4.Size = new System.Drawing.Size(93, 20);
+            this.Txt4.TabIndex = 51;
+            this.Txt4.Text = "En almacen";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.Control;
+            this.label8.Location = new System.Drawing.Point(27, 247);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(216, 20);
+            this.label8.TabIndex = 50;
+            this.label8.Text = "_______________________";
+            // 
+            // Lbl4
+            // 
+            this.Lbl4.AutoSize = true;
+            this.Lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl4.ForeColor = System.Drawing.SystemColors.Control;
+            this.Lbl4.Location = new System.Drawing.Point(31, 280);
+            this.Lbl4.Name = "Lbl4";
+            this.Lbl4.Size = new System.Drawing.Size(71, 20);
+            this.Lbl4.TabIndex = 49;
+            this.Lbl4.Text = "Estado:";
+            // 
+            // Txt3
+            // 
+            this.Txt3.AutoSize = true;
+            this.Txt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt3.ForeColor = System.Drawing.SystemColors.Control;
+            this.Txt3.Location = new System.Drawing.Point(43, 223);
+            this.Txt3.Name = "Txt3";
+            this.Txt3.Size = new System.Drawing.Size(96, 20);
+            this.Txt3.TabIndex = 48;
+            this.Txt3.Text = "12 unidades";
+            // 
+            // Txt2
+            // 
+            this.Txt2.AutoSize = true;
+            this.Txt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt2.ForeColor = System.Drawing.SystemColors.Control;
+            this.Txt2.Location = new System.Drawing.Point(43, 139);
+            this.Txt2.Name = "Txt2";
+            this.Txt2.Size = new System.Drawing.Size(210, 20);
+            this.Txt2.TabIndex = 47;
+            this.Txt2.Text = "Pinzas para practicas de civil";
+            // 
+            // Txt1
+            // 
+            this.Txt1.AutoSize = true;
+            this.Txt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt1.ForeColor = System.Drawing.SystemColors.Control;
+            this.Txt1.Location = new System.Drawing.Point(43, 53);
+            this.Txt1.Name = "Txt1";
+            this.Txt1.Size = new System.Drawing.Size(157, 20);
+            this.Txt1.TabIndex = 46;
+            this.Txt1.Text = "Pinzas corta alambre";
             // 
             // label4
             // 
@@ -205,7 +269,7 @@
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnVolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(122)))), ((int)(((byte)(242)))));
-            this.BtnVolver.Location = new System.Drawing.Point(40, 440);
+            this.BtnVolver.Location = new System.Drawing.Point(8, 437);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(87, 40);
             this.BtnVolver.TabIndex = 34;
@@ -226,7 +290,7 @@
             this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnGuardar.ForeColor = System.Drawing.Color.White;
-            this.BtnGuardar.Location = new System.Drawing.Point(143, 440);
+            this.BtnGuardar.Location = new System.Drawing.Point(111, 437);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(102, 40);
             this.BtnGuardar.TabIndex = 23;
@@ -235,72 +299,7 @@
             this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.botonRedondo1_Click);
             // 
-            // Txt1
-            // 
-            this.Txt1.AutoSize = true;
-            this.Txt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt1.ForeColor = System.Drawing.SystemColors.Control;
-            this.Txt1.Location = new System.Drawing.Point(43, 53);
-            this.Txt1.Name = "Txt1";
-            this.Txt1.Size = new System.Drawing.Size(157, 20);
-            this.Txt1.TabIndex = 46;
-            this.Txt1.Text = "Pinzas corta alambre";
-            // 
-            // Txt2
-            // 
-            this.Txt2.AutoSize = true;
-            this.Txt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt2.ForeColor = System.Drawing.SystemColors.Control;
-            this.Txt2.Location = new System.Drawing.Point(43, 139);
-            this.Txt2.Name = "Txt2";
-            this.Txt2.Size = new System.Drawing.Size(210, 20);
-            this.Txt2.TabIndex = 47;
-            this.Txt2.Text = "Pinzas para practicas de civil";
-            // 
-            // Txt3
-            // 
-            this.Txt3.AutoSize = true;
-            this.Txt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt3.ForeColor = System.Drawing.SystemColors.Control;
-            this.Txt3.Location = new System.Drawing.Point(43, 223);
-            this.Txt3.Name = "Txt3";
-            this.Txt3.Size = new System.Drawing.Size(96, 20);
-            this.Txt3.TabIndex = 48;
-            this.Txt3.Text = "12 unidades";
-            // 
-            // Txt4
-            // 
-            this.Txt4.AutoSize = true;
-            this.Txt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt4.ForeColor = System.Drawing.SystemColors.Control;
-            this.Txt4.Location = new System.Drawing.Point(43, 311);
-            this.Txt4.Name = "Txt4";
-            this.Txt4.Size = new System.Drawing.Size(93, 20);
-            this.Txt4.TabIndex = 51;
-            this.Txt4.Text = "En almacen";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(27, 247);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(216, 20);
-            this.label8.TabIndex = 50;
-            this.label8.Text = "_______________________";
-            // 
-            // Lbl4
-            // 
-            this.Lbl4.AutoSize = true;
-            this.Lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl4.ForeColor = System.Drawing.SystemColors.Control;
-            this.Lbl4.Location = new System.Drawing.Point(31, 280);
-            this.Lbl4.Name = "Lbl4";
-            this.Lbl4.Size = new System.Drawing.Size(71, 20);
-            this.Lbl4.TabIndex = 49;
-            this.Lbl4.Text = "Estado:";
-            // 
-            // InfoHerramienta
+            // infoInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -312,7 +311,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnAjustes);
             this.Controls.Add(this.BtnGuardar);
-            this.Name = "InfoHerramienta";
+            this.Name = "infoInventario";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(876, 500);
             this.Load += new System.EventHandler(this.NuevoUsuario_Load_1);
